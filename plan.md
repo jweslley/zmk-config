@@ -51,20 +51,23 @@ Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
 ├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
 │ ⇧   │  Z  │  X  │  C  │  V  │  B  │                    │  N  │  M  │  ,  │  .  │  /  │  \  │
 └─────┼─────┼─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┘
-      │MUTE*│ ⌃   │ ⌘   │ ⌥   │ L1  │ SPC │        │ RET │ L2  │REPT │ ─── │ ⇧   │ DEL │
+      │MUTE*│ ⌃   │ ⌘   │⌃-A**│ L1  │ SPC │        │ RET │ L2  │REPT │ ─── │ ⇧   │ DEL │
       └─────┴─────┴─────┴─────┴─────┴─────┘        └─────┴─────┴─────┴─────┴─────┴─────┘
        52    53    54    55    56    57             58    59    60    61    62    63
        *hardwired to encoder, cannot change
+       **⌃-A = tmux prefix macro
 ```
 
 **Key Features**:
 - Home row mods: Left `A=⌘, S=⌥, D=⇧, F=⌃` | Right `J=⌃, K=⇧, L=⌥, ;=⌘`
 - **Hyphen `-` and Equals `=`** directly on Layer 0 (right column) for easy access!
 - **Single quote `'`** moved to left column for better ergonomics
+- **Tmux prefix (⌃-A) on left thumb (position 55)** - one-key access to all tmux commands!
 - **Repeat key on right thumb (position 60)** - more accessible! Avoid ==, ++, //
 - **Left thumb** (positions 53-57): 5 usable keys (position 52 is hardwired to MUTE)
 - **Center** (position 58): 1 key accessible by both thumbs
 - **Right thumb** (positions 59-63): 5 keys (L2, Repeat, flexible, Shift, Delete)
+- **Center column** (positions 6, 19, 32, 45): Arrow keys (↑, ↓, ←, →) preserved
 - Encoder: Volume Up/Down
 
 **Position changes from standard QWERTY**:
@@ -77,7 +80,7 @@ Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
 - 52: **C_MUTE** (hardwired to encoder, cannot be changed)
 - 53: LCTRL (quick Ctrl access for terminal/tmux)
 - 54: LGUI (⌘ Cmd key for macOS shortcuts)
-- 55: LALT (⌥ Option/Alt key)
+- 55: **TMUX_PREFIX** ← NEW! Sends ⌃-A for tmux commands
 - 56: mo 1 (hold for Layer 1 - symbols/numbers)
 - 57: SPACE (main space key)
 - 58: ENTER (center key, main enter)
@@ -225,12 +228,20 @@ Currently empty - available for:
 
 ### Phase 1: Foundation (Tasks 1-3)
 
-#### Task 1: Add Key Repeat Behavior
+#### Task 1: Add Key Repeat & Tmux Prefix Behaviors
 **File**: `config/eyelash_sofle.keymap`
 
 **Changes**:
 ```c
 / {
+    macros {
+        tmux_prefix: tmux_prefix {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp A>;
+        };
+    };
+
     behaviors {
         key_repeat: key_repeat {
             compatible = "zmk,behavior-key-repeat";
@@ -247,12 +258,13 @@ Current row 5:
 &kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1  &kp SPACE  &kp ENTER  &kp ENTER  &mo 2  &kp RCTRL  &kp RIGHT_SHIFT  &kp DELETE
 ```
 
-Change to (swap positions 59-60-61):
+Change to:
 ```
-&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1  &kp SPACE  &kp ENTER  &mo 2  &key_repeat  &trans  &kp RIGHT_SHIFT  &kp DELETE
+&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &tmux_prefix  &mo 1  &kp SPACE  &kp ENTER  &mo 2  &key_repeat  &trans  &kp RIGHT_SHIFT  &kp DELETE
 ```
 
 **What changed**:
+- Position 55: `&kp LEFT_ALT` → `&tmux_prefix` (⌃-A macro for tmux!)
 - Position 59: `&kp ENTER` → `&mo 2` (Layer 2 toggle moved here - more accessible)
 - Position 60: `&mo 2` → `&key_repeat` (repeat key - inner right thumb position!)
 - Position 61: `&kp RCTRL` → `&trans` (transparent/pass-through)
@@ -260,12 +272,18 @@ Change to (swap positions 59-60-61):
 
 **Testing**:
 - Build and flash firmware
-- Press `=` once, then press the repeat key → should type `==`
-- Press `:` once, then press the repeat key → should type `::`
-- Type `for` then press repeat → should type another `r`
-- Verify the repeat key works for any character
+- **Repeat key tests**:
+  - Press `=` once, then press the repeat key → should type `==`
+  - Press `:` once, then press the repeat key → should type `::`
+  - Type `for` then press repeat → should type another `r`
+  - Verify the repeat key works for any character
+- **Tmux prefix tests**:
+  - In tmux session, press tmux prefix key then `c` → should create new window
+  - Press tmux prefix then `n` → should switch to next window
+  - Press tmux prefix then `0` → should switch to window 0
+  - Verify it works like Ctrl-A in tmux
 
-**Rollback**: Change position 61 back to `&kp RCTRL`
+**Rollback**: Restore positions 55, 59, 60, 61 to original values
 
 ---
 
