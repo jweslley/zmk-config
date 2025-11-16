@@ -363,37 +363,42 @@ Change to:
 
 ---
 
-#### Task 5: Remove Position 26 (Old CAPS)
+#### Task 5: Update Layer 0 Symbol Positions
 **File**: `config/eyelash_sofle.keymap`
 
-**Update Layer 0** (position 26):
-- Change from: `&kp CAPS`
-- Change to: `&none` or `&trans`
+**Update Layer 0** (positions 25, 26, 38, 51):
+- Position 25: `&kp BSLH` → `&kp MINUS` (hyphen `-`)
+- Position 26: `&kp CAPS` → `&kp APOS` (single quote `'`)
+- Position 38: `&kp APOS` → `&kp EQUAL` (equals `=`)
+- Position 51: `&kp ENTER` → `&kp BSLH` (backslash `\`)
 
 **Testing**:
-- Verify CAPS moved to Layer 2 (position 26)
-- Confirm no accidental CAPS activation
+- Test typing `-` and `=` for text (hyphens, math)
+- Test `'` for contractions, string quotes
+- Test `\` for escape sequences
+- Verify ENTER still accessible on thumbs (positions 58, 59)
 
-**Rollback**: Restore `&kp CAPS` if needed
+**Rollback**: Restore original positions if needed
 
 ---
 
 ### Phase 3: Symbol Layer - Left Hand (Tasks 6-7)
 
-#### Task 6: Symbol Layer - Left Top/Number Row
+#### Task 6: Symbol Layer - Left Top Rows
 **File**: `config/eyelash_sofle.keymap`
 
 **Update Layer 1** (positions 0-5, 13-18):
 ```
-Row 1 (0-5):   `    !    @    #    $    %
-Row 2 (13-18): ~    1    2    3    4    5
+Row 1 (0-5):   GRAVE  TILDE  AT     HASH   DLLR   CARET
+Row 2 (13-18): UNDER  EXCL   QMARK  ASTRK  FSLH   PRCNT
 ```
+Note: Keep position 6 (center) and 19 (center) unchanged (preserve arrow keys)
 
 **Testing**:
 - Hold Layer 1, type each symbol
-- Verify backtick, tilde work
-- Test numbers 1-5
-- Test symbols !, @, #, $, %
+- Test ` (backtick), ~ (tilde)
+- Test @, #, $, ^ for Ruby symbols
+- Test _, !, ?, *, /, % for operators
 
 **Rollback**: Restore original Layer 1 values
 
@@ -404,16 +409,21 @@ Row 2 (13-18): ~    1    2    3    4    5
 
 **Update Layer 1** (positions 26-31, 39-44):
 ```
-Home (26-31):   trans  =  -  +  *  <
-Bottom (39-44): trans  _  /  &  |  ?
+Home (26-31):   &trans  MINUS  PLUS  LT  EQUAL  GT
+Bottom (39-44): &trans  UNDER  ASTRK  FSLH  PRCNT  AMPS
 ```
+Note: Keep positions 32 and 45 (center) unchanged (preserve arrow keys)
 
 **Testing**:
 - Test `=` for typing `==` (with repeat)
-- Test `-`, `+` for math
-- Test `<`, `>` combo
-- Test `&`, `|` for && and ||
-- Try Ruby bigrams: `<=`, `>=`, `!=`
+- Test `-`, `+` for math and operators
+- Test Ruby bigrams as inward rolls:
+  - `<=`: < (middle) → = (INDEX) ✓
+  - `>=`: > (INDEX) → = (INDEX) ✓
+  - `->`: - (pinky) → > (INDEX) ✓
+  - `+=`: + (ring) → = (INDEX) ✓
+  - `-=`: - (pinky) → = (INDEX) ✓
+- Test `&`, `%`, `*`, `/` operators
 
 **Rollback**: Restore original Layer 1 values
 
@@ -421,20 +431,22 @@ Bottom (39-44): trans  _  /  &  |  ?
 
 ### Phase 4: Symbol Layer - Right Hand (Tasks 8-9)
 
-#### Task 8: Symbol Layer - Right Top/Number Row
+#### Task 8: Symbol Layer - Right Top Rows
 **File**: `config/eyelash_sofle.keymap`
 
 **Update Layer 1** (positions 7-12, 20-25):
 ```
-Row 1 (7-12):  ^    &    *    (    )    DEL
-Row 2 (20-25): 6    7    8    9    0    |
+Row 1 (7-12):  AT  AT  LPAR  RPAR  LBRC  RBRC  DEL
+Row 2 (20-25): PIPE  AMPS  DQT  SQT  BSLH  PIPE
 ```
+Note: Position 7 is @@ (double at for Ruby instance variables)
+Note: Keep positions 6, 19 (center) unchanged (preserve arrow keys)
 
 **Testing**:
-- Test numbers 6-0
-- Test ^, &, *, (, )
-- Test pipe |
-- Verify DEL works
+- Test @@ for Ruby instance variables (`@@variable`)
+- Test (), {}, [] for delimiters
+- Test |, &, ", ', \ for Ruby syntax
+- Verify DEL works (position 12)
 
 **Rollback**: Restore original Layer 1 values
 
@@ -445,16 +457,20 @@ Row 2 (20-25): 6    7    8    9    0    |
 
 **Update Layer 1** (positions 33-38, 46-51):
 ```
-Home (33-38):   >  :  [  ]  "  '
-Bottom (46-51): !  {  }  (  )  trans
+Home (33-38):   COLON  LBKT  RBKT  LPAR  RPAR  &trans
+Bottom (46-51): PIPE  LBRC  RBRC  LBKT  RBKT  &trans
 ```
+Note: Keep positions 32, 45, 58 (center) unchanged (preserve arrow keys + ENTER)
 
 **Testing**:
 - Test `:` for Ruby hashes (`key: value`)
-- Test brackets: `[]`, `{}`
-- Test quotes: `"`, `'`
-- Try bigrams: `=>`, `->`, `::`
-- Test parentheses
+- Test `::` (double colon) using `:` + repeat key
+- Test brackets: `[]` adjacent on home row
+- Test `{}`, `()` for blocks and grouping
+- Try Ruby bigrams:
+  - `=>`: = (left INDEX) → > (left INDEX)
+  - `->`: - (left pinky) → > (left INDEX)
+  - `::`: : (right INDEX) + repeat key
 
 **Rollback**: Restore original Layer 1 values
 
@@ -465,15 +481,18 @@ Bottom (46-51): !  {  }  (  )  trans
 #### Task 10: Navigation - Function Keys
 **File**: `config/eyelash_sofle.keymap`
 
-**Update Layer 2** (positions 0-12):
+**Update Layer 2** (positions 0-5, 7-12):
 ```
-Row 1: F11  F1  F2  F3  F4  F5  (center)  F6  F7  F8  F9  F10  F12
+Row 1 left (0-5):   F11  F1  F2  F3  F4  F5
+Row 1 right (7-12): F6  F7  F8  F9  F10  F12
 ```
+Note: Keep position 6 (center UP_ARROW) unchanged
 
 **Testing**:
 - Test each F-key (F1-F12)
 - Try in IDE (F5 for debug, etc.)
 - Verify F11, F12 work
+- Confirm center arrow key still works
 
 **Rollback**: Restore original Layer 2 row 1
 
@@ -484,15 +503,18 @@ Row 1: F11  F1  F2  F3  F4  F5  (center)  F6  F7  F8  F9  F10  F12
 
 **Update Layer 2** (positions 20-25, 33-38):
 ```
-Row 2 (20-25): HOME PGDN PGUP END INS trans
-Row 3 (33-38): LEFT DOWN UP   RIGHT trans trans
+Row 2 left (14-18): &tmux_1 &tmux_2 &tmux_3 &tmux_4 &tmux_5
+Row 2 right (20-25): HOME PGDN PGUP END INS &trans
+Row 3 right (33-38): LEFT DOWN UP RIGHT &trans &trans
 ```
+Note: Keep positions 19, 32, 45, 58 (center column) unchanged
 
 **Testing**:
 - Test arrow keys in editor
 - Test Page Up/Down for scrolling
 - Test Home/End for line navigation
 - Verify Insert key works
+- Center arrow keys should still work
 
 **Rollback**: Restore original Layer 2 values
 
@@ -522,31 +544,54 @@ Bottom row (40-44): LG(Z) LG(X) LG(C) LG(V) trans
 
 ### Phase 6: Tmux Integration (Tasks 13-14)
 
-#### Task 13: Add Tmux Macro Behavior
+#### Task 13: Add Tmux Window Switching Macros
 **File**: `config/eyelash_sofle.keymap`
 
-**Changes**:
+**Note**: This complements the `tmux_prefix` macro from Task 1. While `tmux_prefix` lets you do ANY tmux command (prefix + key), these macros provide one-key shortcuts to switch to specific windows.
+
+**Changes** (add to macros section after tmux_prefix):
 ```c
 / {
     macros {
+        // tmux_prefix already added in Task 1
+
         tmux_0: tmux_0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(A) &kp N0>;
+            bindings = <&kp LCTRL &kp A &kp N0>;
         };
         tmux_1: tmux_1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(A) &kp N1>;
+            bindings = <&kp LCTRL &kp A &kp N1>;
         };
-        // ... repeat for tmux_2 through tmux_5
+        tmux_2: tmux_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp A &kp N2>;
+        };
+        tmux_3: tmux_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp A &kp N3>;
+        };
+        tmux_4: tmux_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp A &kp N4>;
+        };
+        tmux_5: tmux_5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp A &kp N5>;
+        };
     };
 };
 ```
 
 **Testing**:
-- Test macro compiles
-- Don't test functionality yet
+- Firmware compiles successfully
+- Don't test functionality yet (wait for Task 14)
 
 **Rollback**: Remove macro definitions
 
