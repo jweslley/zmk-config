@@ -239,7 +239,7 @@ Currently empty - available for:
         tmux_prefix: tmux_prefix {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LCTRL &kp A>;
+            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp A>, <&macro_release &kp LCTRL>;
         };
     };
 
