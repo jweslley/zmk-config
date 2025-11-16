@@ -42,19 +42,19 @@ Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
 ### Layer 0: Base (QWERTY + Home Row Mods)
 
 ```
-┌─────┬─────┬─────┬─────┬─────┬─────┐                    ┌─────┬─────┬─────┬─────┬─────┬─────┐
-│ ESC │  1  │  2  │  3  │  4  │  5  │                    │  6  │  7  │  8  │  9  │  0  │ BSPC│
-├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ TAB │  Q  │  W  │  E  │  R  │  T  │                    │  Y  │  U  │  I  │  O  │  P  │  -  │
-├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│  '  │ A/⌘ │ S/⌥ │ D/⇧ │ F/⌃ │  G  │                    │  H  │ J/⌃ │ K/⇧ │ L/⌥ │ ;/⌘ │  =  │
-├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ⇧   │  Z  │  X  │  C  │  V  │  B  │                    │  N  │  M  │  ,  │  .  │  /  │  \  │
-└─────┼─────┼─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┘
-      │MUTE*│ ⌃   │ ⌘   │⌃-A**│ L1  │ SPC │        │ RET │ L2  │REPT │ ─── │ ⇧   │ DEL │
-      └─────┴─────┴─────┴─────┴─────┴─────┘        └─────┴─────┴─────┴─────┴─────┴─────┘
-       52    53    54    55    56    57             58    59    60    61    62    63
-       *hardwired to encoder, cannot change
+┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
+│ ESC │  1  │  2  │  3  │  4  │  5  │       │  ↑  │       │  6  │  7  │  8  │  9  │  0  │ BSPC│
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ TAB │  Q  │  W  │  E  │  R  │  T  │       │  ↓  │       │  Y  │  U  │  I  │  O  │  P  │  -  │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│  '  │ A/⌘ │ S/⌥ │ D/⇧ │ F/⌃ │  G  │       │  ←  │       │  H  │ J/⌃ │ K/⇧ │ L/⌥ │ ;/⌘ │  =  │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ⇧   │  Z  │  X  │  C  │  V  │  B  │       │  →  │       │  N  │  M  │  ,  │  .  │  /  │  \  │
+└─────┼─────┼─────┼─────┼─────┼─────┼─────┐ ├─────┤ ┌─────┼─────┼─────┼─────┼─────┼─────┴─────┘
+      │none*│ ⌃   │ ⌘   │⌃-A**│ L1  │ SPC │ │ RET │ │ RET │ L2  │REPT │ ⇧   │ DEL │
+      └─────┴─────┴─────┴─────┴─────┴─────┘ └─────┘ └─────┴─────┴─────┴─────┴─────┘
+       52    53    54    55    56    57      58      59    60    61    62    63
+       *hardwired to encoder, set to &none
        **⌃-A = tmux prefix macro
 ```
 
@@ -63,10 +63,11 @@ Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
 - **Hyphen `-` and Equals `=`** directly on Layer 0 (right column) for easy access!
 - **Single quote `'`** moved to left column for better ergonomics
 - **Tmux prefix (⌃-A) on left thumb (position 55)** - one-key access to all tmux commands!
-- **Repeat key on right thumb (position 60)** - more accessible! Avoid ==, ++, //
-- **Left thumb** (positions 53-57): 5 usable keys (position 52 is hardwired to MUTE)
+- **Repeat key on right thumb (position 61)** - avoid double-tapping for ==, ::, ||, etc.
+- **Duplicate ENTER keys** (positions 58, 59) - accessible from both thumbs
+- **Left thumb** (positions 53-57): 5 usable keys (position 52 is encoder, set to &none)
 - **Center** (position 58): 1 key accessible by both thumbs
-- **Right thumb** (positions 59-63): 5 keys (L2, Repeat, flexible, Shift, Delete)
+- **Right thumb** (positions 59-63): 5 keys (ENTER, L2, Repeat, Shift, Delete)
 - **Center column** (positions 6, 19, 32, 45): Arrow keys (↑, ↓, ←, →) preserved
 - Encoder: Volume Up/Down
 
@@ -76,17 +77,17 @@ Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
 - Position 38: ~~`'`~~ → `=` (equals)
 - Position 51: ~~ENTER~~ → `\` (backslash) - ENTER on thumbs (58, 59)
 
-**Proposed thumb layout**:
-- 52: **C_MUTE** (hardwired to encoder, cannot be changed)
+**Actual thumb layout** (as implemented):
+- 52: **&none** (encoder hardwired position)
 - 53: LCTRL (quick Ctrl access for terminal/tmux)
 - 54: LGUI (⌘ Cmd key for macOS shortcuts)
 - 55: **TMUX_PREFIX** ← NEW! Sends ⌃-A for tmux commands
 - 56: mo 1 (hold for Layer 1 - symbols/numbers)
 - 57: SPACE (main space key)
-- 58: ENTER (center key, main enter)
-- 59: **mo 2** ← MOVED from position 60 (hold for Layer 2 - navigation)
-- 60: **key_repeat** ← MOVED from position 61 (repeat last key! More accessible)
-- 61: &trans (flexible - can be RGUI, RCTRL, or other modifier)
+- 58: ENTER (center key, accessible by both thumbs)
+- 59: ENTER (duplicate for convenience - right thumb)
+- 60: mo 2 (hold for Layer 2 - navigation)
+- 61: **key_repeat** ← NEW! Repeat last key for ==, ::, etc.
 - 62: RSHFT (right shift for convenience)
 - 63: DELETE (backspace alternative)
 
@@ -95,17 +96,17 @@ Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
 ### Layer 1: Symbols (Ruby Optimized)
 
 ```
-┌─────┬─────┬─────┬─────┬─────┬─────┐                    ┌─────┬─────┬─────┬─────┬─────┬─────┐
-│  `  │  ~  │  @  │  #  │  $  │  ^  │                    │ @@  │  (  │  )  │  {  │  }  │ DEL │
-├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│  _  │  !  │  ?  │  *  │  /  │  %  │                    │  |  │  &  │  "  │  '  │  \  │  |  │
-├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │  -  │  +  │  <  │  =  │  >  │                    │  :  │  [  │  ]  │  (  │  )  │ ─── │
-├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │  _  │  *  │  /  │  %  │  &  │                    │  |  │  {  │  }  │  [  │  ]  │ ─── │
-└─────┼─────┼─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┘
-      │MUTE │ ─── │ ─── │ ─── │ ─── │ ─── │        │ ─── │ ─── │ L3  │ ─── │ ─── │ ─── │
-      └─────┴─────┴─────┴─────┴─────┴─────┘        └─────┴─────┴─────┴─────┴─────┴─────┘
+┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
+│  `  │  ~  │  @  │  #  │  $  │  ^  │       │ ─── │       │ @@  │  (  │  )  │  {  │  }  │ DEL │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│  _  │  !  │  ?  │  *  │  /  │  %  │       │ ─── │       │  |  │  &  │  "  │  '  │  \  │  |  │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ─── │  -  │  +  │  <  │  =  │  >  │       │ ─── │       │  :  │  [  │  ]  │  (  │  )  │ ─── │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ─── │  _  │  *  │  /  │  %  │  &  │       │ ─── │       │  |  │  {  │  }  │  [  │  ]  │ ─── │
+└─────┼─────┼─────┼─────┼─────┼─────┼─────┐ ├─────┤ ┌─────┼─────┼─────┼─────┼─────┼─────┴─────┘
+      │MUTE │ ─── │ ─── │ ─── │ ─── │ ─── │ │ ─── │ │ ─── │ L3  │ ─── │ ─── │ ─── │
+      └─────┴─────┴─────┴─────┴─────┴─────┘ └─────┘ └─────┴─────┴─────┴─────┴─────┘
 ```
 
 **Ruby Bigrams (Optimized as Inward Rolls)**:
@@ -164,17 +165,17 @@ Other common Ruby patterns:
 ### Layer 2: Navigation + Function Keys
 
 ```
-┌─────┬─────┬─────┬─────┬─────┬─────┐                    ┌─────┬─────┬─────┬─────┬─────┬─────┐
-│ F11 │ F1  │ F2  │ F3  │ F4  │ F5  │                    │ F6  │ F7  │ F8  │ F9  │ F10 │ F12 │
-├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │Tmux1│Tmux2│Tmux3│Tmux4│Tmux5│                    │ HOME│ PGDN│ PGUP│ END │ INS │ ─── │
-├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ CAPS│ ⌘   │  ⌥  │  ⇧  │  ⌃  │ ─── │                    │  ←  │  ↓  │  ↑  │  →  │ ─── │ ─── │
-├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │ ⌘Z  │ ⌘X  │ ⌘C  │ ⌘V  │Tmux0│                    │ ⌃←  │ ⌃↓  │ ⌃↑  │ ⌃→  │ ─── │ ─── │
-└─────┼─────┼─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┘
-      │MUTE │ ─── │ ─── │ L4  │ ─── │ ─── │        │ ─── │ ─── │ ─── │ ─── │ ─── │ ─── │
-      └─────┴─────┴─────┴─────┴─────┴─────┘        └─────┴─────┴─────┴─────┴─────┴─────┘
+┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
+│ F11 │ F1  │ F2  │ F3  │ F4  │ F5  │       │ ─── │       │ F6  │ F7  │ F8  │ F9  │ F10 │ F12 │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ─── │Tmux1│Tmux2│Tmux3│Tmux4│Tmux5│       │ ─── │       │ HOME│ PGDN│ PGUP│ END │ INS │ ─── │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ CAPS│ ⌘   │  ⌥  │  ⇧  │  ⌃  │ ─── │       │ ─── │       │  ←  │  ↓  │  ↑  │  →  │ ─── │ ─── │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ─── │ ⌘Z  │ ⌘X  │ ⌘C  │ ⌘V  │Tmux0│       │ ─── │       │ ⌃←  │ ⌃↓  │ ⌃↑  │ ⌃→  │ ─── │ ─── │
+└─────┼─────┼─────┼─────┼─────┼─────┼─────┐ ├─────┤ ┌─────┼─────┼─────┼─────┼─────┼─────┴─────┘
+      │MUTE │ ─── │ ─── │ L4  │ ─── │ ─── │ │ ─── │ │ ─── │ ─── │ ─── │ ─── │ ─── │
+      └─────┴─────┴─────┴─────┴─────┴─────┘ └─────┘ └─────┴─────┴─────┴─────┴─────┘
 ```
 
 **Key Features**:
@@ -190,17 +191,17 @@ Other common Ruby patterns:
 ### Layer 3: System + Mouse
 
 ```
-┌─────┬─────┬─────┬─────┬─────┬─────┐                    ┌─────┬─────┬─────┬─────┬─────┬─────┐
-│ ─── │ BT1 │ BT2 │ BT3 │ BT4 │ BT5 │                    │ RGB+│ RGB-│ EFF+│ EFF-│ TOG │BOOT │
-├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │BTCLR│BTCLA│ ─── │ ─── │ ─── │                    │ M↑  │ MW← │ MW→ │ ─── │ ─── │RESET│
-├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │ USB │ BLE │ ─── │ ─── │ ─── │                    │ M←  │ M↓  │ M↑  │ M→  │ ─── │ ─── │
-├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │ ─── │ ─── │ ─── │ ─── │ ─── │                    │ MW↓ │ MW↑ │ ─── │ ─── │ ─── │ ─── │
-└─────┼─────┼─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┘
-      │MUTE │ ─── │ ─── │ ─── │ ─── │ LCLK│        │ RCLK│ MCLK│ ─── │ ─── │ ─── │ ─── │
-      └─────┴─────┴─────┴─────┴─────┴─────┘        └─────┴─────┴─────┴─────┴─────┴─────┘
+┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
+│ ─── │ BT1 │ BT2 │ BT3 │ BT4 │ BT5 │       │ ─── │       │ RGB+│ RGB-│ EFF+│ EFF-│ TOG │BOOT │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ─── │BTCLR│BTCLA│ ─── │ ─── │ ─── │       │ ─── │       │ M↑  │ MW← │ MW→ │ ─── │ ─── │RESET│
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ─── │ USB │ BLE │ ─── │ ─── │ ─── │       │ ─── │       │ M←  │ M↓  │ M↑  │ M→  │ ─── │ ─── │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ─── │ ─── │ ─── │ ─── │ ─── │ ─── │       │ ─── │       │ MW↓ │ MW↑ │ ─── │ ─── │ ─── │ ─── │
+└─────┼─────┼─────┼─────┼─────┼─────┼─────┐ ├─────┤ ┌─────┼─────┼─────┼─────┼─────┼─────┴─────┘
+      │MUTE │ ─── │ ─── │ ─── │ ─── │ LCLK│ │ RCLK│ │ MCLK│ ─── │ ─── │ ─── │ ─── │
+      └─────┴─────┴─────┴─────┴─────┴─────┘ └─────┘ └─────┴─────┴─────┴─────┴─────┘
 ```
 
 **Key Features**:
@@ -258,17 +259,16 @@ Current row 5:
 &kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1  &kp SPACE  &kp ENTER  &kp ENTER  &mo 2  &kp RCTRL  &kp RIGHT_SHIFT  &kp DELETE
 ```
 
-Change to:
+Changed to:
 ```
-&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &tmux_prefix  &mo 1  &kp SPACE  &kp ENTER  &mo 2  &key_repeat  &trans  &kp RIGHT_SHIFT  &kp DELETE
+&none  &kp LCTRL  &kp LEFT_GUI  &tmux_prefix  &mo 1  &kp SPACE  &kp ENTER  &kp ENTER  &mo 2  &key_repeat  &kp RIGHT_SHIFT  &kp DELETE
 ```
 
 **What changed**:
+- Position 52: `&kp C_MUTE` → `&none` (encoder hardwired position)
 - Position 55: `&kp LEFT_ALT` → `&tmux_prefix` (⌃-A macro for tmux!)
-- Position 59: `&kp ENTER` → `&mo 2` (Layer 2 toggle moved here - more accessible)
-- Position 60: `&mo 2` → `&key_repeat` (repeat key - inner right thumb position!)
-- Position 61: `&kp RCTRL` → `&trans` (transparent/pass-through)
-- Note: Duplicate ENTER removed (already have ENTER at position 58)
+- Position 61: `&kp RCTRL` → `&key_repeat` (repeat key for ==, ::, ||, etc.)
+- Note: Kept duplicate ENTER at positions 58 and 59 for convenience
 
 **Testing**:
 - Build and flash firmware
