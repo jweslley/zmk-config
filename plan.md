@@ -45,11 +45,11 @@ Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
 ┌─────┬─────┬─────┬─────┬─────┬─────┐                    ┌─────┬─────┬─────┬─────┬─────┬─────┐
 │ ESC │  1  │  2  │  3  │  4  │  5  │                    │  6  │  7  │  8  │  9  │  0  │ BSPC│
 ├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ TAB │  Q  │  W  │  E  │  R  │  T  │                    │  Y  │  U  │  I  │  O  │  P  │  \  │
+│ TAB │  Q  │  W  │  E  │  R  │  T  │                    │  Y  │  U  │  I  │  O  │  P  │  -  │
 ├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │ A/⌘ │ S/⌥ │ D/⇧ │ F/⌃ │  G  │                    │  H  │ J/⌃ │ K/⇧ │ L/⌥ │ ;/⌘ │  '  │
+│  '  │ A/⌘ │ S/⌥ │ D/⇧ │ F/⌃ │  G  │                    │  H  │ J/⌃ │ K/⇧ │ L/⌥ │ ;/⌘ │  =  │
 ├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ⇧   │  Z  │  X  │  C  │  V  │  B  │                    │  N  │  M  │  ,  │  .  │  /  │ RET │
+│ ⇧   │  Z  │  X  │  C  │  V  │  B  │                    │  N  │  M  │  ,  │  .  │  /  │  \  │
 └─────┼─────┼─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┘
       │MUTE*│ ⌃   │ ⌘   │ ⌥   │ L1  │ SPC │        │ RET │ RET │ L2  │REPT │ ⇧   │ DEL │
       └─────┴─────┴─────┴─────┴─────┴─────┘        └─────┴─────┴─────┴─────┴─────┴─────┘
@@ -59,11 +59,19 @@ Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
 
 **Key Features**:
 - Home row mods: Left `A=⌘, S=⌥, D=⇧, F=⌃` | Right `J=⌃, K=⇧, L=⌥, ;=⌘`
-- Repeat key on right thumb (position 60) - avoid ==, ++, //
+- **Hyphen `-` and Equals `=`** directly on Layer 0 (right column) for easy access!
+- **Single quote `'`** moved to left column for better ergonomics
+- Repeat key on right thumb (position 61) - avoid ==, ++, //
 - **Left thumb** (positions 53-57): 5 usable keys (position 52 is hardwired to MUTE)
 - **Center** (position 58): 1 key accessible by both thumbs
 - **Right thumb** (positions 59-63): 5 keys
 - Encoder: Volume Up/Down
+
+**Position changes from standard QWERTY**:
+- Position 26: ~~CAPS~~ → `'` (single quote) - CAPS moved to Layer 2
+- Position 25: ~~`\`~~ → `-` (hyphen/minus)
+- Position 38: ~~`'`~~ → `=` (equals)
+- Position 51: ~~ENTER~~ → `\` (backslash) - ENTER on thumbs (58, 59)
 
 **Proposed thumb layout** (keeping current layout, only adding repeat key):
 - 52: **C_MUTE** (hardwired to encoder, cannot be changed)
@@ -100,18 +108,23 @@ Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
 **Ruby Bigrams (Inward Rolls)**:
 - `<=`: < (pinky) → = (index) ✓
 - `>=`: Similar pattern ✓
-- `->`: - (middle) + > (right hand)
-- `=>`: = (index) + > (right hand)
+- `->`: - (middle) → > (right hand)
+- `=>`: = (index) → > (right hand)
 - `::`: : (index) + repeat key ✓
-- `==`: = (index) + repeat key ✓
+- `==`: = (Layer 0) + repeat key ✓
+- `--`: - (Layer 0) + repeat key ✓
 - `!=`: ! + = comfortable reach
 
 **Key Features**:
 - Numbers 1-0 on second row (easier than top row)
-- `=` on left home index (most common)
+- `=` and `-` **also** on Layer 1 home row for symbol combos while holding layer
 - `:` on right home index (Ruby hashes)
 - Brackets/parens on right side
 - Math operators on left home row
+
+**Note**: `=` and `-` appear on **both Layer 0 and Layer 1** for convenience:
+- **Layer 0**: Right column (positions 25, 38) - easy access for writing text
+- **Layer 1**: Left home row (positions 27, 28) - for symbol combinations without releasing layer
 
 ---
 
