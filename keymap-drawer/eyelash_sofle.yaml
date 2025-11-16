@@ -53,16 +53,16 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {type: ghost}
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-command$$
-  - '&tmux_prefix'
+  - {t: TMUX, s: '$$mdi:console$$'}
   - layer1
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - layer2
-  - '&key_repeat'
+  - {t: Repeat, s: '$$mdi:repeat$$'}
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:backspace-reverse-outline$$
   layer1:
