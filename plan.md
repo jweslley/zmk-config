@@ -89,42 +89,72 @@ Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
 
 ---
 
-### Layer 1: Symbols + Numbers (Ruby Optimized)
+### Layer 1: Symbols (Ruby Optimized)
 
 ```
 ┌─────┬─────┬─────┬─────┬─────┬─────┐                    ┌─────┬─────┬─────┬─────┬─────┬─────┐
-│  `  │  !  │  @  │  #  │  $  │  %  │                    │  ^  │  &  │  *  │  (  │  )  │ DEL │
+│  `  │  ~  │  @  │  #  │  $  │  ^  │                    │ @@  │  (  │  )  │  {  │  }  │ DEL │
 ├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│  ~  │  1  │  2  │  3  │  4  │  5  │                    │  6  │  7  │  8  │  9  │  0  │  |  │
+│  _  │  !  │  ?  │  *  │  /  │  %  │                    │  |  │  &  │  "  │  '  │  \  │  |  │
 ├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │  =  │  -  │  +  │  *  │  <  │                    │  >  │  :  │  [  │  ]  │  "  │  '  │
+│ ─── │  -  │  +  │  <  │  =  │  >  │                    │  :  │  [  │  ]  │  (  │  )  │ ─── │
 ├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │  _  │  /  │  &  │  |  │  ?  │                    │  !  │  {  │  }  │  (  │  )  │ ─── │
+│ ─── │  _  │  *  │  /  │  %  │  &  │                    │  |  │  {  │  }  │  [  │  ]  │ ─── │
 └─────┼─────┼─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┘
       │MUTE │ ─── │ ─── │ ─── │ ─── │ ─── │        │ ─── │ ─── │ L3  │ ─── │ ─── │ ─── │
       └─────┴─────┴─────┴─────┴─────┴─────┘        └─────┴─────┴─────┴─────┴─────┴─────┘
 ```
 
-**Ruby Bigrams (Inward Rolls)**:
-- `<=`: < (pinky) → = (index) ✓
-- `>=`: Similar pattern ✓
-- `->`: - (middle) → > (right hand)
-- `=>`: = (index) → > (right hand)
-- `::`: : (index) + repeat key ✓
-- `==`: = (Layer 0) + repeat key ✓
-- `--`: - (Layer 0) + repeat key ✓
-- `!=`: ! + = comfortable reach
+**Ruby Bigrams (Optimized as Inward Rolls)**:
+
+Left hand home row enables comfortable inward rolls:
+- `<=`: **< (middle, 29) → = (INDEX, 30)** ✓ Inward roll
+- `>=`: **> (INDEX, 31) → = (INDEX, 30)** ⚠️ Same finger (adjacent keys, very natural)
+- `->`: **- (pinky, 27) → > (INDEX, 31)** ✓ Full inward roll
+- `+=`: **+ (ring, 28) → = (INDEX, 30)** ✓ Inward roll
+- `-=`: **- (pinky, 27) → = (INDEX, 30)** ✓ Full inward roll
+- `*=`: **\* (row 2/4) → = (INDEX, 30)** ✓ Available
+- `/=`: **/ (row 2/4) → = (INDEX, 30)** ✓ Available
+- `=>`: **= (INDEX, 30) → > (INDEX, 31)** ⚠️ Same finger (adjacent keys, very natural)
+
+Right hand home row for delimiters:
+- `::`: **: (INDEX, 33) + repeat** ✓ Symbol syntax
+- `[]`: **[ (INDEX, 34) ] (middle, 35)** ✓ Adjacent keys
+
+With repeat key:
+- `==`: **= + repeat** ✓
+- `::`: **: + repeat** ✓ (colon on right index)
+- `||`: **| + repeat** ✓ (pipe on right side)
+- `&&`: **& + repeat** ✓ (ampersand on right side)
+
+Other common Ruby patterns:
+- `!=`: **! (row 2) → = (home)** - comfortable reach
+- `[]`: **[ ] next to each other** (positions 34-35) ✓
+- `{}`: **{ } grouped** (positions 10-11, 47-48) ✓
+- `()`: **( ) grouped** (positions 8-9, 36-37, 49-50) ✓
+- `|x|`: **| easy access** on right side ✓
 
 **Key Features**:
-- Numbers 1-0 on second row (easier than top row)
-- `=` and `-` **also** on Layer 1 home row for symbol combos while holding layer
-- `:` on right home index (Ruby hashes)
-- Brackets/parens on right side
-- Math operators on left home row
+- **No numbers** - already on Layer 0 without modifiers
+- **Left home row optimized for operators** (pinky → INDEX):
+  - `< + > = -` (positions 27-31)
+  - Most common `=` on strongest finger (INDEX, position 30)
+  - Enables 5+ inward rolls for Ruby bigrams
+- **Right home row for delimiters** (INDEX → pinky):
+  - `: [ ] ( )` (positions 33-37)
+  - Colon `:` on INDEX for hash syntax
+  - Brackets `[]` adjacent for easy array access
+- **Symbols grouped by type**:
+  - Row 1: Special chars (`, ~, @, #, $, ^, @@)
+  - Row 2: Logic/string (_, !, ?, *, /, %, |, &, ", ', \)
+  - Row 3 (HOME): Operators & delimiters optimized by finger strength
+  - Row 4: Duplicate brackets for convenience ({ }, [], |)
+- **Pinkies avoid double-taps** - use repeat key instead!
+- **Block parameters** `|x|` very accessible with pipe on right side
 
-**Note**: `=` and `-` appear on **both Layer 0 and Layer 1** for convenience:
-- **Layer 0**: Right column (positions 25, 38) - easy access for writing text
-- **Layer 1**: Left home row (positions 27, 28) - for symbol combinations without releasing layer
+**Finger assignments on home row**:
+- Left: pinky `<`, ring `+`, middle `>`, INDEX `=`, INDEX `-`
+- Right: INDEX `:`, INDEX `[`, middle `]`, ring `(`, pinky `)`
 
 ---
 
