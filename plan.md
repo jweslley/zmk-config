@@ -51,7 +51,7 @@ Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
 ├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
 │ ⇧   │  Z  │  X  │  C  │  V  │  B  │                    │  N  │  M  │  ,  │  .  │  /  │  \  │
 └─────┼─────┼─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┘
-      │MUTE*│ ⌃   │ ⌘   │ ⌥   │ L1  │ SPC │        │ RET │ RET │ L2  │REPT │ ⇧   │ DEL │
+      │MUTE*│ ⌃   │ ⌘   │ ⌥   │ L1  │ SPC │        │ RET │ L2  │REPT │ ─── │ ⇧   │ DEL │
       └─────┴─────┴─────┴─────┴─────┴─────┘        └─────┴─────┴─────┴─────┴─────┴─────┘
        52    53    54    55    56    57             58    59    60    61    62    63
        *hardwired to encoder, cannot change
@@ -61,10 +61,10 @@ Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
 - Home row mods: Left `A=⌘, S=⌥, D=⇧, F=⌃` | Right `J=⌃, K=⇧, L=⌥, ;=⌘`
 - **Hyphen `-` and Equals `=`** directly on Layer 0 (right column) for easy access!
 - **Single quote `'`** moved to left column for better ergonomics
-- Repeat key on right thumb (position 61) - avoid ==, ++, //
+- **Repeat key on right thumb (position 60)** - more accessible! Avoid ==, ++, //
 - **Left thumb** (positions 53-57): 5 usable keys (position 52 is hardwired to MUTE)
 - **Center** (position 58): 1 key accessible by both thumbs
-- **Right thumb** (positions 59-63): 5 keys
+- **Right thumb** (positions 59-63): 5 keys (L2, Repeat, flexible, Shift, Delete)
 - Encoder: Volume Up/Down
 
 **Position changes from standard QWERTY**:
@@ -73,7 +73,7 @@ Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
 - Position 38: ~~`'`~~ → `=` (equals)
 - Position 51: ~~ENTER~~ → `\` (backslash) - ENTER on thumbs (58, 59)
 
-**Proposed thumb layout** (keeping current layout, only adding repeat key):
+**Proposed thumb layout**:
 - 52: **C_MUTE** (hardwired to encoder, cannot be changed)
 - 53: LCTRL (quick Ctrl access for terminal/tmux)
 - 54: LGUI (⌘ Cmd key for macOS shortcuts)
@@ -81,9 +81,9 @@ Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
 - 56: mo 1 (hold for Layer 1 - symbols/numbers)
 - 57: SPACE (main space key)
 - 58: ENTER (center key, main enter)
-- 59: ENTER (duplicate on right half - can change to &trans)
-- 60: mo 2 (hold for Layer 2 - navigation/function keys)
-- 61: **key_repeat** ← CHANGED from RCTRL (repeat last key!)
+- 59: **mo 2** ← MOVED from position 60 (hold for Layer 2 - navigation)
+- 60: **key_repeat** ← MOVED from position 61 (repeat last key! More accessible)
+- 61: &trans (flexible - can be RGUI, RCTRL, or other modifier)
 - 62: RSHFT (right shift for convenience)
 - 63: DELETE (backspace alternative)
 
@@ -217,14 +217,16 @@ Current row 5:
 &kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1  &kp SPACE  &kp ENTER  &kp ENTER  &mo 2  &kp RCTRL  &kp RIGHT_SHIFT  &kp DELETE
 ```
 
-Change to (update position 61):
+Change to (swap positions 59-60-61):
 ```
-&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1  &kp SPACE  &kp ENTER  &kp ENTER  &mo 2  &key_repeat  &kp RIGHT_SHIFT  &kp DELETE
+&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1  &kp SPACE  &kp ENTER  &mo 2  &key_repeat  &trans  &kp RIGHT_SHIFT  &kp DELETE
 ```
 
 **What changed**:
-- Position 61: `&kp RCTRL` → `&key_repeat`
-- Note: RCTRL is removed (you already have Ctrl on home row via HRM)
+- Position 59: `&kp ENTER` → `&mo 2` (Layer 2 toggle moved here - more accessible)
+- Position 60: `&mo 2` → `&key_repeat` (repeat key - inner right thumb position!)
+- Position 61: `&kp RCTRL` → `&trans` (transparent/pass-through)
+- Note: Duplicate ENTER removed (already have ENTER at position 58)
 
 **Testing**:
 - Build and flash firmware
