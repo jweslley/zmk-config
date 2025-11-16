@@ -204,10 +204,20 @@ parse_config:
       tap: $$mdi:apple-keyboard-shift$$
       hold: $$mdi:toggle-switch$$
 
-    # Empty
+    # Empty - hide completely
     "&none":
-      tap: $$mdi:minus-circle-outline$$
-      type: none
+      tap: ""
+      hold: ""
+      shifted: ""
+      type: ghost
+
+    # Custom behaviors
+    "&tmux_prefix":
+      tap: "TMUX"
+      shifted: $$mdi:console$$
+    "&key_repeat":
+      tap: "Repeat"
+      shifted: $$mdi:repeat$$
 
     # Whitespace
     "&bkspc_del":
