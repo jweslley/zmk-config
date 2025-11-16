@@ -11,6 +11,32 @@
 
 ---
 
+## Keyboard Layout Reference
+
+Your eyelash_sofle has **65 keys total** arranged as:
+- **Rows 1-4**: 13 keys each (6 left + 1 center + 6 right)
+- **Row 5 (thumb)**: 12 keys (6 left + 1 center + 5 right)
+
+### Position Mapping
+
+```
+Row 1 (0-12):    [0-5]     [6]      [7-12]      (left 6, center 1, right 6)
+Row 2 (13-25):   [13-18]   [19]     [20-25]     (left 6, center 1, right 6)
+Row 3 (26-38):   [26-31]   [32]     [33-38]     (left 6, center 1, right 6)
+Row 4 (39-51):   [39-44]   [45]     [46-51]     (left 6, center 1, right 6)
+Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
+                  ↑
+                 MUTE (hardwired, must always be C_MUTE)
+```
+
+**Current Thumb Row (Row 5)**:
+- **Position 52**: C_MUTE (hardwired to encoder, cannot be changed)
+- **Left thumb (53-57)**: LCTRL, LGUI, LALT, mo 1, SPACE (5 usable keys)
+- **Center (58)**: ENTER (1 key, accessible by both thumbs)
+- **Right thumb (59-63)**: ENTER, mo 2, RCTRL, RSHFT, DELETE (5 keys)
+
+---
+
 ## Target Layer Designs
 
 ### Layer 0: Base (QWERTY + Home Row Mods)
@@ -24,16 +50,34 @@
 │ ─── │ A/⌘ │ S/⌥ │ D/⇧ │ F/⌃ │  G  │                    │  H  │ J/⌃ │ K/⇧ │ L/⌥ │ ;/⌘ │  '  │
 ├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
 │ ⇧   │  Z  │  X  │  C  │  V  │  B  │                    │  N  │  M  │  ,  │  .  │  /  │ RET │
-└─────┴─────┴─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┴─────┴─────┘
-                  │ ⌥   │ L1  │ SPC │ ⌃/A │        │ RET │ SPC │ L2  │REPT │
-                  └─────┴─────┴─────┴─────┘        └─────┴─────┴─────┴─────┘
+└─────┼─────┼─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┘
+      │MUTE*│ ⌃   │ ⌘   │ ⌥   │ L1  │ SPC │        │ RET │ RET │ L2  │REPT │ ⇧   │ DEL │
+      └─────┴─────┴─────┴─────┴─────┴─────┘        └─────┴─────┴─────┴─────┴─────┴─────┘
+       52    53    54    55    56    57             58    59    60    61    62    63
+       *hardwired to encoder, cannot change
 ```
 
 **Key Features**:
 - Home row mods: Left `A=⌘, S=⌥, D=⇧, F=⌃` | Right `J=⌃, K=⇧, L=⌥, ;=⌘`
-- Repeat key on right inner thumb (avoid ==, ++, //)
-- ⌃/A combo on left inner thumb for tmux prefix
+- Repeat key on right thumb (position 60) - avoid ==, ++, //
+- **Left thumb** (positions 53-57): 5 usable keys (position 52 is hardwired to MUTE)
+- **Center** (position 58): 1 key accessible by both thumbs
+- **Right thumb** (positions 59-63): 5 keys
 - Encoder: Volume Up/Down
+
+**Proposed thumb layout** (keeping current layout, only adding repeat key):
+- 52: **C_MUTE** (hardwired to encoder, cannot be changed)
+- 53: LCTRL (quick Ctrl access for terminal/tmux)
+- 54: LGUI (⌘ Cmd key for macOS shortcuts)
+- 55: LALT (⌥ Option/Alt key)
+- 56: mo 1 (hold for Layer 1 - symbols/numbers)
+- 57: SPACE (main space key)
+- 58: ENTER (center key, main enter)
+- 59: ENTER (duplicate on right half - can change to &trans)
+- 60: mo 2 (hold for Layer 2 - navigation/function keys)
+- 61: **key_repeat** ← CHANGED from RCTRL (repeat last key!)
+- 62: RSHFT (right shift for convenience)
+- 63: DELETE (backspace alternative)
 
 ---
 
@@ -48,9 +92,9 @@
 │ ─── │  =  │  -  │  +  │  *  │  <  │                    │  >  │  :  │  [  │  ]  │  "  │  '  │
 ├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
 │ ─── │  _  │  /  │  &  │  |  │  ?  │                    │  !  │  {  │  }  │  (  │  )  │ ─── │
-└─────┴─────┴─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┴─────┴─────┘
-                  │ ─── │ ─── │ ─── │ ─── │        │ ─── │ ─── │ L3  │ ─── │
-                  └─────┴─────┴─────┴─────┘        └─────┴─────┴─────┴─────┘
+└─────┼─────┼─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┘
+      │MUTE │ ─── │ ─── │ ─── │ ─── │ ─── │        │ ─── │ ─── │ L3  │ ─── │ ─── │ ─── │
+      └─────┴─────┴─────┴─────┴─────┴─────┘        └─────┴─────┴─────┴─────┴─────┴─────┘
 ```
 
 **Ruby Bigrams (Inward Rolls)**:
@@ -82,9 +126,9 @@
 │ CAPS│ ⌘   │  ⌥  │  ⇧  │  ⌃  │ ─── │                    │  ←  │  ↓  │  ↑  │  →  │ ─── │ ─── │
 ├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
 │ ─── │ ⌘Z  │ ⌘X  │ ⌘C  │ ⌘V  │Tmux0│                    │ ⌃←  │ ⌃↓  │ ⌃↑  │ ⌃→  │ ─── │ ─── │
-└─────┴─────┴─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┴─────┴─────┘
-                  │ ─── │ L4  │ ─── │ ─── │        │ ─── │ ─── │ ─── │ ─── │
-                  └─────┴─────┴─────┴─────┘        └─────┴─────┴─────┴─────┘
+└─────┼─────┼─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┘
+      │MUTE │ ─── │ ─── │ L4  │ ─── │ ─── │        │ ─── │ ─── │ ─── │ ─── │ ─── │ ─── │
+      └─────┴─────┴─────┴─────┴─────┴─────┘        └─────┴─────┴─────┴─────┴─────┴─────┘
 ```
 
 **Key Features**:
@@ -108,9 +152,9 @@
 │ ─── │ USB │ BLE │ ─── │ ─── │ ─── │                    │ M←  │ M↓  │ M↑  │ M→  │ ─── │ ─── │
 ├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
 │ ─── │ ─── │ ─── │ ─── │ ─── │ ─── │                    │ MW↓ │ MW↑ │ ─── │ ─── │ ─── │ ─── │
-└─────┴─────┴─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┴─────┴─────┘
-                  │ ─── │ ─── │ ─── │ ─── │        │ LCLK│ RCLK│ ─── │ MCLK│
-                  └─────┴─────┴─────┴─────┘        └─────┴─────┴─────┴─────┘
+└─────┼─────┼─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┘
+      │MUTE │ ─── │ ─── │ ─── │ ─── │ LCLK│        │ RCLK│ MCLK│ ─── │ ─── │ ─── │ ─── │
+      └─────┴─────┴─────┴─────┴─────┴─────┘        └─────┴─────┴─────┴─────┴─────┴─────┘
 ```
 
 **Key Features**:
@@ -153,17 +197,30 @@ Currently empty - available for:
 };
 ```
 
-**Update Layer 0** (position 63):
-- Change from: `&kp RSHFT`
-- Change to: `&key_repeat`
+**Update Layer 0, Row 5** (thumb row positions 52-63):
+
+Current row 5:
+```
+&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1  &kp SPACE  &kp ENTER  &kp ENTER  &mo 2  &kp RCTRL  &kp RIGHT_SHIFT  &kp DELETE
+```
+
+Change to (update position 61):
+```
+&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1  &kp SPACE  &kp ENTER  &kp ENTER  &mo 2  &key_repeat  &kp RIGHT_SHIFT  &kp DELETE
+```
+
+**What changed**:
+- Position 61: `&kp RCTRL` → `&key_repeat`
+- Note: RCTRL is removed (you already have Ctrl on home row via HRM)
 
 **Testing**:
 - Build and flash firmware
-- Type `==` by pressing `=` then repeat key
-- Type `::` by pressing `:` then repeat key
-- Verify other characters repeat correctly
+- Press `=` once, then press the repeat key → should type `==`
+- Press `:` once, then press the repeat key → should type `::`
+- Type `for` then press repeat → should type another `r`
+- Verify the repeat key works for any character
 
-**Rollback**: Revert position 63 to `&kp RSHFT`
+**Rollback**: Change position 61 back to `&kp RCTRL`
 
 ---
 
