@@ -97,15 +97,15 @@ Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
 
 ```
 ┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
-│  `  │  ~  │  @  │  #  │  $  │  ^  │       │ ─── │       │ @@  │  (  │  )  │  {  │  }  │ DEL │
+│  `  │  !  │  @  │  #  │  $  │  %  │       │ M↑  │       │  ^  │  &  │  *  │  (  │  )  │ DEL │
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│  _  │  !  │  ?  │  *  │  /  │  %  │       │ ─── │       │  |  │  &  │  "  │  '  │  \  │  |  │
+│ ─── │  ~  │  ?  │  *  │  _  │  |  │       │ M↓  │       │  .  │  (  │  )  │  '  │  \  │  |  │
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │  -  │  +  │  <  │  =  │  >  │       │ ─── │       │  :  │  [  │  ]  │  (  │  )  │ ─── │
+│ ─── │  -  │  +  │  <  │  =  │  >  │       │ M←  │       │  :  │  [  │  ]  │  (  │  )  │ ─── │
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │  _  │  *  │  /  │  %  │  &  │       │ ─── │       │  |  │  {  │  }  │  [  │  ]  │ ─── │
+│ ─── │  _  │  *  │  /  │  %  │  &  │       │ M→  │       │  |  │  {  │  }  │  [  │  ]  │ ─── │
 └─────┼─────┼─────┼─────┼─────┼─────┼─────┐ ├─────┤ ┌─────┼─────┼─────┼─────┼─────┼─────┴─────┘
-      │MUTE │ ─── │ ─── │ ─── │ ─── │ ─── │ │ ─── │ │ ─── │ L3  │ ─── │ ─── │ ─── │
+      │none │ ─── │ ─── │ ─── │ ─── │ ─── │ │LCLK │ │ ─── │ L3  │ ─── │ ─── │ ─── │
       └─────┴─────┴─────┴─────┴─────┴─────┘ └─────┘ └─────┴─────┴─────┴─────┴─────┘
 ```
 
@@ -132,16 +132,18 @@ With repeat key:
 - `&&`: **& + repeat** ✓ (ampersand on right side)
 
 Other common Ruby patterns:
-- `!=`: **! (row 2) → = (home)** - comfortable reach
-- `[]`: **[ ] next to each other** (positions 34-35) ✓
-- `{}`: **{ } grouped** (positions 10-11, 47-48) ✓
-- `()`: **( ) grouped** (positions 8-9, 36-37, 49-50) ✓
-- `|x|`: **| easy access** on right side ✓
+- `!=`: **! (row 1, pos 1) → = (home, pos 30)** - comfortable reach
+- `[]`: **[ ] next to each other** (positions 34-35 on home row) ✓
+- `{}`: **{ } grouped** (positions 47-48 on bottom row) ✓
+- `()`: **( ) available in multiple positions** (10-11 row 1, 21-22 row 2, 36-37 home row) ✓
+- `|x|`: **| easy access** on right side (positions 18, 25, 46) ✓
 
 **Key Features**:
 - **No numbers** - already on Layer 0 without modifiers
+- **Mouse movement in center column** - M↑/↓/←/→ for quick pointer control
+- **Left click on thumb** - position 58 for easy mouse clicking
 - **Left home row optimized for operators** (pinky → INDEX):
-  - `< + > = -` (positions 27-31)
+  - `- + < = >` (positions 27-31)
   - Most common `=` on strongest finger (INDEX, position 30)
   - Enables 5+ inward rolls for Ruby bigrams
 - **Right home row for delimiters** (INDEX → pinky):
@@ -149,15 +151,15 @@ Other common Ruby patterns:
   - Colon `:` on INDEX for hash syntax
   - Brackets `[]` adjacent for easy array access
 - **Symbols grouped by type**:
-  - Row 1: Special chars (`, ~, @, #, $, ^, @@)
-  - Row 2: Logic/string (_, !, ?, *, /, %, |, &, ", ', \)
-  - Row 3 (HOME): Operators & delimiters optimized by finger strength
-  - Row 4: Duplicate brackets for convenience ({ }, [], |)
+  - Row 1: GRAVE + shifted number symbols (`, !, @, #, $, %, ^, &, *, (, ))
+  - Row 2: Special chars and delimiters (~, ?, *, _, |, ., (, ), ', \)
+  - Row 3 (HOME): Operators & delimiters optimized by finger strength (-, +, <, =, >, :, [, ], (, ))
+  - Row 4: Duplicate symbols for convenience (_, *, /, %, &, |, {, }, [, ])
 - **Pinkies avoid double-taps** - use repeat key instead!
 - **Block parameters** `|x|` very accessible with pipe on right side
 
 **Finger assignments on home row**:
-- Left: pinky `<`, ring `+`, middle `>`, INDEX `=`, INDEX `-`
+- Left: pinky `-`, ring `+`, middle `<`, INDEX `=`, INDEX `>`
 - Right: INDEX `:`, INDEX `[`, middle `]`, ring `(`, pinky `)`
 
 ---
@@ -382,17 +384,18 @@ Changed to:
 
 ---
 
-### Phase 3: Symbol Layer - Left Hand (Tasks 6-7)
+### Phase 3: Symbol Layer - Left Hand (Tasks 6-7) ✅ COMPLETED
 
-#### Task 6: Symbol Layer - Left Top Rows
+#### Task 6: Symbol Layer - Left Top Rows ✅ COMPLETED
 **File**: `config/eyelash_sofle.keymap`
 
 **Update Layer 1** (positions 0-5, 13-18):
 ```
-Row 1 (0-5):   GRAVE  TILDE  AT     HASH   DLLR   CARET
+Row 1 (0-5):   GRAVE  EXCL   AT     HASH   DLLR   PRCNT
 Row 2 (13-18): UNDER  EXCL   QMARK  ASTRK  FSLH   PRCNT
 ```
 Note: Keep position 6 (center) and 19 (center) unchanged (preserve arrow keys)
+Note: Row 1 matches shifted number symbols (GRAVE + shifted 1-5)
 
 **Testing**:
 - Hold Layer 1, type each symbol
@@ -404,7 +407,7 @@ Note: Keep position 6 (center) and 19 (center) unchanged (preserve arrow keys)
 
 ---
 
-#### Task 7: Symbol Layer - Left Home/Bottom Rows
+#### Task 7: Symbol Layer - Left Home/Bottom Rows ✅ COMPLETED
 **File**: `config/eyelash_sofle.keymap`
 
 **Update Layer 1** (positions 26-31, 39-44):
@@ -429,30 +432,30 @@ Note: Keep positions 32 and 45 (center) unchanged (preserve arrow keys)
 
 ---
 
-### Phase 4: Symbol Layer - Right Hand (Tasks 8-9)
+### Phase 4: Symbol Layer - Right Hand (Tasks 8-9) ✅ COMPLETED
 
-#### Task 8: Symbol Layer - Right Top Rows
+#### Task 8: Symbol Layer - Right Top Rows ✅ COMPLETED
 **File**: `config/eyelash_sofle.keymap`
 
 **Update Layer 1** (positions 7-12, 20-25):
 ```
-Row 1 (7-12):  AT  AT  LPAR  RPAR  LBRC  RBRC  DEL
-Row 2 (20-25): PIPE  AMPS  DQT  SQT  BSLH  PIPE
+Row 1 (7-12):  CARET  AMPS  ASTRK  LPAR  RPAR  DEL
+Row 2 (20-25): PIPE   AMPS  DQT    SQT   BSLH  PIPE
 ```
-Note: Position 7 is @@ (double at for Ruby instance variables)
+Note: Row 1 right side matches shifted number symbols (shifted 6-9, 0)
 Note: Keep positions 6, 19 (center) unchanged (preserve arrow keys)
 
 **Testing**:
-- Test @@ for Ruby instance variables (`@@variable`)
+- Test Row 1 symbols: ^ & * ( ) DEL
 - Test (), {}, [] for delimiters
-- Test |, &, ", ', \ for Ruby syntax
+- Test |, &, ", ', \ for Ruby syntax (Row 2)
 - Verify DEL works (position 12)
 
 **Rollback**: Restore original Layer 1 values
 
 ---
 
-#### Task 9: Symbol Layer - Right Home/Bottom Rows
+#### Task 9: Symbol Layer - Right Home/Bottom Rows ✅ COMPLETED
 **File**: `config/eyelash_sofle.keymap`
 
 **Update Layer 1** (positions 33-38, 46-51):

@@ -91,11 +91,11 @@
 
         layer_1 {
             bindings = <
-&kp GRAVE   &kp F1           &kp F2          &kp F3           &kp F4           &kp F5             &mmv MOVE_UP     &kp F6           &kp F7           &kp F8      &kp F9     &kp F10           &trans
-&trans      &kp GRAVE        &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4           &mmv MOVE_DOWN   &kp PG_UP        &kp END          &kp UP      &kp HOME   &kp MINUS         &kp EQUAL
-&trans      &kp TILDE        &trans          &trans           &trans           &mkp MB5           &mmv MOVE_LEFT   &kp PG_DN        &kp LEFT         &kp DOWN    &kp RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp INSERT  &kp F11    &kp F12           &trans
-&kp C_MUTE  &trans           &trans          &trans           &trans           &trans             &mkp LCLK        &trans           &trans           &trans      &trans     &trans
+&kp GRAVE   &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT    &mmv MOVE_UP     &kp CARET   &kp AMPS    &kp ASTRK   &kp LPAR    &kp RPAR    &kp DEL
+&trans      &kp TILDE   &kp QMARK   &kp ASTRK   &kp UNDER   &kp PIPE     &mmv MOVE_DOWN   &kp DOT     &kp LPAR    &kp RPAR    &kp SQT     &kp BSLH    &kp PIPE
+&trans      &kp MINUS   &kp PLUS    &kp LT      &kp EQUAL   &kp GT       &mmv MOVE_LEFT   &kp COLON   &kp LBKT    &kp RBKT    &kp LPAR    &kp RPAR    &trans
+&trans      &kp UNDER   &kp ASTRK   &kp FSLH    &kp PRCNT   &kp AMPS     &mmv MOVE_RIGHT  &kp PIPE    &kp LBRC    &kp RBRC    &kp LBKT    &kp RBKT    &trans
+&none       &trans      &trans      &trans      &trans      &trans       &mkp LCLK        &trans      &mo 3       &trans      &trans      &trans
             >;
 
             display-name = "layer1";
