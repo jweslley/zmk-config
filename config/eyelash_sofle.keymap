@@ -91,11 +91,11 @@
 
         layer_1 {
             bindings = <
-&kp GRAVE   &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT    &mmv MOVE_UP     &kp CARET   &kp AMPS    &kp ASTRK   &kp LPAR    &kp RPAR    &kp DEL
-&trans      &kp TILDE   &kp QMARK   &kp ASTRK   &kp UNDER   &kp PIPE     &mmv MOVE_DOWN   &kp DOT     &kp LPAR    &kp RPAR    &kp SQT     &kp BSLH    &kp PIPE
-&trans      &kp MINUS   &kp PLUS    &kp LT      &kp EQUAL   &kp GT       &mmv MOVE_LEFT   &kp COLON   &kp LBKT    &kp RBKT    &kp LPAR    &kp RPAR    &trans
-&trans      &kp UNDER   &kp ASTRK   &kp FSLH    &kp PRCNT   &kp AMPS     &mmv MOVE_RIGHT  &kp PIPE    &kp LBRC    &kp RBRC    &kp LBKT    &kp RBKT    &trans
-&none       &trans      &trans      &trans      &trans      &trans       &mkp LCLK        &trans      &mo 3       &trans      &trans      &trans
+&kp GRAVE   &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT    &kp C_VOL_UP     &kp CARET   &kp AMPS    &kp ASTRK   &kp LPAR    &kp RPAR    &kp DEL
+&trans      &kp TILDE   &kp QMARK   &kp ASTRK   &kp UNDER   &kp PIPE     &kp C_VOL_DN     &kp DOT     &kp LPAR    &kp RPAR    &kp SQT     &kp BSLH    &kp PIPE
+&trans      &kp MINUS   &kp PLUS    &kp LT      &kp EQUAL   &kp GT       &kp C_PREV       &kp COLON   &kp LBKT    &kp RBKT    &kp LPAR    &kp RPAR    &trans
+&trans      &kp UNDER   &kp ASTRK   &kp FSLH    &kp PRCNT   &kp AMPS     &kp C_NEXT       &kp PIPE    &kp LBRC    &kp RBRC    &kp LBKT    &kp RBKT    &trans
+&none       &trans      &trans      &trans      &trans      &trans       &kp C_PP         &trans      &mo 3       &trans      &trans      &trans
             >;
 
             display-name = "layer1";

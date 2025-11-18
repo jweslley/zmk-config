@@ -97,15 +97,15 @@ Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
 
 ```
 ┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
-│  `  │  !  │  @  │  #  │  $  │  %  │       │ M↑  │       │  ^  │  &  │  *  │  (  │  )  │ DEL │
+│  `  │  !  │  @  │  #  │  $  │  %  │       │VOL+ │       │  ^  │  &  │  *  │  (  │  )  │ DEL │
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │  ~  │  ?  │  *  │  _  │  |  │       │ M↓  │       │  .  │  (  │  )  │  '  │  \  │  |  │
+│ ─── │  ~  │  ?  │  *  │  _  │  |  │       │VOL- │       │  .  │  (  │  )  │  '  │  \  │  |  │
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │  -  │  +  │  <  │  =  │  >  │       │ M←  │       │  :  │  [  │  ]  │  (  │  )  │ ─── │
+│ ─── │  -  │  +  │  <  │  =  │  >  │       │PREV │       │  :  │  [  │  ]  │  (  │  )  │ ─── │
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │  _  │  *  │  /  │  %  │  &  │       │ M→  │       │  |  │  {  │  }  │  [  │  ]  │ ─── │
+│ ─── │  _  │  *  │  /  │  %  │  &  │       │NEXT │       │  |  │  {  │  }  │  [  │  ]  │ ─── │
 └─────┼─────┼─────┼─────┼─────┼─────┼─────┐ ├─────┤ ┌─────┼─────┼─────┼─────┼─────┼─────┴─────┘
-      │none │ ─── │ ─── │ ─── │ ─── │ ─── │ │LCLK │ │ ─── │ L3  │ ─── │ ─── │ ─── │
+      │none │ ─── │ ─── │ ─── │ ─── │ ─── │ │PLAY │ │ ─── │ L3  │ ─── │ ─── │ ─── │
       └─────┴─────┴─────┴─────┴─────┴─────┘ └─────┘ └─────┴─────┴─────┴─────┴─────┘
 ```
 
@@ -140,8 +140,8 @@ Other common Ruby patterns:
 
 **Key Features**:
 - **No numbers** - already on Layer 0 without modifiers
-- **Mouse movement in center column** - M↑/↓/←/→ for quick pointer control
-- **Left click on thumb** - position 58 for easy mouse clicking
+- **Media controls in center column** - VOL+/VOL-/PREV/NEXT for quick media control
+- **Play/Pause on thumb** - position 58 for easy media playback control
 - **Left home row optimized for operators** (pinky → INDEX):
   - `- + < = >` (positions 27-31)
   - Most common `=` on strongest finger (INDEX, position 30)
@@ -480,7 +480,7 @@ Note: Keep positions 32, 45, 58 (center) unchanged (preserve arrow keys + ENTER)
 
 ### Phase 5: Navigation Layer (Tasks 10-12)
 
-#### Task 10: Navigation - Function Keys
+#### Task 10: Navigation - Function Keys ✅ COMPLETED
 **File**: `config/eyelash_sofle.keymap`
 
 **Update Layer 2** (positions 0-5, 7-12):
@@ -500,7 +500,7 @@ Note: Keep position 6 (center UP_ARROW) unchanged
 
 ---
 
-#### Task 11: Navigation - Arrow Keys & Page Navigation
+#### Task 11: Navigation - Arrow Keys & Page Navigation ✅ COMPLETED
 **File**: `config/eyelash_sofle.keymap`
 
 **Update Layer 2** (positions 20-25, 33-38):
@@ -523,7 +523,7 @@ Note: Keep positions 19, 32, 45, 58 (center column) unchanged
 
 ---
 
-#### Task 12: Navigation - Ctrl+Arrow & macOS Shortcuts
+#### Task 12: Navigation - Ctrl+Arrow & macOS Shortcuts ✅ COMPLETED
 **File**: `config/eyelash_sofle.keymap`
 
 **Update Layer 2** (positions 26, 40-44, 46-50, 52, 59):
