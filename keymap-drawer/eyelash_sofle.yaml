@@ -72,7 +72,7 @@ layers:
   - '#'
   - $
   - '%'
-  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
+  - $$mdi:volume-high$$
   - ^
   - '&'
   - '*'
@@ -85,7 +85,7 @@ layers:
   - '*'
   - _
   - '|'
-  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
+  - $$mdi:volume-low$$
   - {t: ., s: '>'}
   - (
   - )
@@ -98,7 +98,7 @@ layers:
   - <
   - {t: '=', s: +}
   - '>'
-  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
+  - $$mdi:skip-previous$$
   - ':'
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
@@ -111,7 +111,7 @@ layers:
   - {t: /, s: '?'}
   - '%'
   - '&'
-  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
+  - $$mdi:skip-next$$
   - '|'
   - '{'
   - '}'
@@ -124,7 +124,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:mouse-left-click-outline$$
+  - $$mdi:play-pause$$
   - {t: '$$mdi:transfer$$', type: trans}
   - layer3
   - {t: '$$mdi:transfer$$', type: trans}
