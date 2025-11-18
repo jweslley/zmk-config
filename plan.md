@@ -43,15 +43,15 @@ Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
 
 ```
 ┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
-│ ESC │  1  │  2  │  3  │  4  │  5  │       │  ↑  │       │  6  │  7  │  8  │  9  │  0  │ BSPC│
+│ ESC │  1  │  2  │  3  │  4  │  5  │       │VOL+ │       │  6  │  7  │  8  │  9  │  0  │ BSPC│
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ TAB │  Q  │  W  │  E  │  R  │  T  │       │  ↓  │       │  Y  │  U  │  I  │  O  │  P  │  -  │
+│ TAB │  Q  │  W  │  E  │  R  │  T  │       │VOL- │       │  Y  │  U  │  I  │  O  │  P  │  -  │
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│  '  │ A/⌘ │ S/⌥ │ D/⇧ │ F/⌃ │  G  │       │  ←  │       │  H  │ J/⌃ │ K/⇧ │ L/⌥ │ ;/⌘ │  =  │
+│  '  │ A/⌘ │ S/⌥ │ D/⇧ │ F/⌃ │  G  │       │PREV │       │  H  │ J/⌃ │ K/⇧ │ L/⌥ │ ;/⌘ │  =  │
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ⇧   │  Z  │  X  │  C  │  V  │  B  │       │  →  │       │  N  │  M  │  ,  │  .  │  /  │  \  │
+│ ⇧   │  Z  │  X  │  C  │  V  │  B  │       │NEXT │       │  N  │  M  │  ,  │  .  │  /  │  \  │
 └─────┼─────┼─────┼─────┼─────┼─────┼─────┐ ├─────┤ ┌─────┼─────┼─────┼─────┼─────┼─────┴─────┘
-      │none*│ ⌃   │ ⌘   │⌃-A**│ L1  │ SPC │ │ RET │ │ RET │ L2  │REPT │ ⇧   │ DEL │
+      │none*│ ⌃   │ ⌘   │⌃-A**│ L1  │ SPC │ │PLAY │ │ RET │ L2  │REPT │ ⇧   │ DEL │
       └─────┴─────┴─────┴─────┴─────┴─────┘ └─────┘ └─────┴─────┴─────┴─────┴─────┘
        52    53    54    55    56    57      58      59    60    61    62    63
        *hardwired to encoder, set to &none
@@ -64,11 +64,11 @@ Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
 - **Single quote `'`** moved to left column for better ergonomics
 - **Tmux prefix (⌃-A) on left thumb (position 55)** - one-key access to all tmux commands!
 - **Repeat key on right thumb (position 61)** - avoid double-tapping for ==, ::, ||, etc.
-- **Duplicate ENTER keys** (positions 58, 59) - accessible from both thumbs
+- **Media controls in center column** - VOL+/VOL-/PREV/NEXT for quick media control
+- **Play/Pause on center thumb** (position 58) - easy media playback control
 - **Left thumb** (positions 53-57): 5 usable keys (position 52 is encoder, set to &none)
-- **Center** (position 58): 1 key accessible by both thumbs
+- **Center** (position 58): Play/Pause accessible by both thumbs
 - **Right thumb** (positions 59-63): 5 keys (ENTER, L2, Repeat, Shift, Delete)
-- **Center column** (positions 6, 19, 32, 45): Arrow keys (↑, ↓, ←, →) preserved
 - Encoder: Volume Up/Down
 
 **Position changes from standard QWERTY**:
@@ -97,15 +97,15 @@ Row 5 (52-63):   [52-57]   [58]     [59-63]     (left 6, center 1, right 5)
 
 ```
 ┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
-│  `  │  !  │  @  │  #  │  $  │  %  │       │VOL+ │       │  ^  │  &  │  *  │  (  │  )  │ DEL │
+│  `  │  !  │  @  │  #  │  $  │  %  │       │  ↑  │       │  ^  │  &  │  *  │  (  │  )  │ DEL │
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │  ~  │  ?  │  *  │  _  │  |  │       │VOL- │       │  .  │  (  │  )  │  '  │  \  │  |  │
+│ ─── │  ~  │  ?  │  *  │  _  │  |  │       │  ↓  │       │  .  │  (  │  )  │  '  │  \  │  |  │
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │  -  │  +  │  <  │  =  │  >  │       │PREV │       │  :  │  [  │  ]  │  (  │  )  │ ─── │
+│ ─── │  -  │  +  │  <  │  =  │  >  │       │  ←  │       │  :  │  [  │  ]  │  (  │  )  │ ─── │
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │  _  │  *  │  /  │  %  │  &  │       │NEXT │       │  |  │  {  │  }  │  [  │  ]  │ ─── │
+│ ─── │  _  │  *  │  /  │  %  │  &  │       │  →  │       │  |  │  {  │  }  │  [  │  ]  │ ─── │
 └─────┼─────┼─────┼─────┼─────┼─────┼─────┐ ├─────┤ ┌─────┼─────┼─────┼─────┼─────┼─────┴─────┘
-      │none │ ─── │ ─── │ ─── │ ─── │ ─── │ │PLAY │ │ ─── │ L3  │ ─── │ ─── │ ─── │
+      │none │ ─── │ ─── │ ─── │ ─── │ ─── │ │ RET │ │ ─── │ L3  │ ─── │ ─── │ ─── │
       └─────┴─────┴─────┴─────┴─────┴─────┘ └─────┘ └─────┴─────┴─────┴─────┴─────┘
 ```
 
@@ -140,8 +140,8 @@ Other common Ruby patterns:
 
 **Key Features**:
 - **No numbers** - already on Layer 0 without modifiers
-- **Media controls in center column** - VOL+/VOL-/PREV/NEXT for quick media control
-- **Play/Pause on thumb** - position 58 for easy media playback control
+- **Arrow keys in center column** - ↑/↓/←/→ for quick navigation while typing symbols
+- **ENTER on center thumb** - position 58 for easy access
 - **Left home row optimized for operators** (pinky → INDEX):
   - `- + < = >` (positions 27-31)
   - Most common `=` on strongest finger (INDEX, position 30)
