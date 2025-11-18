@@ -7,7 +7,7 @@ layers:
   - {t: '3', s: '#'}
   - {t: '4', s: $}
   - {t: '5', s: '%'}
-  - $$mdi:arrow-up-bold$$
+  - $$mdi:volume-high$$
   - {t: '6', s: ^}
   - {t: '7', s: '&'}
   - {t: '8', s: '*'}
@@ -20,7 +20,7 @@ layers:
   - E
   - R
   - T
-  - $$mdi:arrow-down-bold$$
+  - $$mdi:volume-low$$
   - Y
   - U
   - I
@@ -33,7 +33,7 @@ layers:
   - {t: D, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: F, h: '$$mdi:apple-keyboard-control$$'}
   - G
-  - $$mdi:arrow-left-bold$$
+  - $$mdi:skip-previous$$
   - H
   - {t: J, h: '$$mdi:apple-keyboard-control$$'}
   - {t: K, h: '$$mdi:apple-keyboard-shift$$'}
@@ -46,7 +46,7 @@ layers:
   - C
   - V
   - B
-  - $$mdi:arrow-right-bold$$
+  - $$mdi:skip-next$$
   - N
   - M
   - {t: ',', s: <}
@@ -59,7 +59,7 @@ layers:
   - {t: TMUX, s: '$$mdi:console$$'}
   - layer1
   - $$mdi:keyboard-space$$
-  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - $$mdi:play-pause$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - layer2
   - {t: Repeat, s: '$$mdi:repeat$$'}
@@ -72,7 +72,7 @@ layers:
   - '#'
   - $
   - '%'
-  - $$mdi:volume-high$$
+  - $$mdi:arrow-up-bold$$
   - ^
   - '&'
   - '*'
@@ -85,7 +85,7 @@ layers:
   - '*'
   - _
   - '|'
-  - $$mdi:volume-low$$
+  - $$mdi:arrow-down-bold$$
   - {t: ., s: '>'}
   - (
   - )
@@ -98,7 +98,7 @@ layers:
   - <
   - {t: '=', s: +}
   - '>'
-  - $$mdi:skip-previous$$
+  - $$mdi:arrow-left-bold$$
   - ':'
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
@@ -111,7 +111,7 @@ layers:
   - {t: /, s: '?'}
   - '%'
   - '&'
-  - $$mdi:skip-next$$
+  - $$mdi:arrow-right-bold$$
   - '|'
   - '{'
   - '}'
@@ -124,7 +124,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:play-pause$$
+  - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:transfer$$', type: trans}
   - layer3
   - {t: '$$mdi:transfer$$', type: trans}
