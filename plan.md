@@ -170,13 +170,13 @@ Other common Ruby patterns:
 ┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
 │ F11 │ F1  │ F2  │ F3  │ F4  │ F5  │       │ ─── │       │ F6  │ F7  │ F8  │ F9  │ F10 │ F12 │
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │Tmux1│Tmux2│Tmux3│Tmux4│Tmux5│       │ ─── │       │ HOME│ PGDN│ PGUP│ END │ INS │ ─── │
+│ ─── │ ─── │ ─── │ ─── │ ─── │ ─── │       │ ─── │       │ HOME│ PGDN│ PGUP│ END │ INS │PRTSC│
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ CAPS│ ⌘   │  ⌥  │  ⇧  │  ⌃  │ ─── │       │ ─── │       │  ←  │  ↓  │  ↑  │  →  │ ─── │ ─── │
+│ ─── │ ⌘   │  ⌥  │  ⇧  │  ⌃  │ ─── │       │ ─── │       │  ←  │  ↓  │  ↑  │  →  │ ─── │ ─── │
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│ ─── │ ⌘Z  │ ⌘X  │ ⌘C  │ ⌘V  │Tmux0│       │ ─── │       │ ⌃←  │ ⌃↓  │ ⌃↑  │ ⌃→  │ ─── │ ─── │
+│ ─── │ ⌘Z  │ ⌘X  │ ⌘C  │ ⌘V  │ ─── │       │ ─── │       │ ⌃←  │ ⌃↓  │ ⌃↑  │ ⌃→  │ ─── │ ─── │
 └─────┼─────┼─────┼─────┼─────┼─────┼─────┐ ├─────┤ ┌─────┼─────┼─────┼─────┼─────┼─────┴─────┘
-      │MUTE │ ─── │ ─── │ L4  │ ─── │ ─── │ │ ─── │ │ ─── │ ─── │ ─── │ ─── │ ─── │
+      │none │ ─── │ ─── │ ─── │ ─── │ ─── │ │ ─── │ │ ⌘   │ ─── │ ─── │ ─── │ ─── │
       └─────┴─────┴─────┴─────┴─────┴─────┘ └─────┘ └─────┴─────┴─────┴─────┴─────┘
 ```
 
@@ -184,9 +184,8 @@ Other common Ruby patterns:
 - Function keys F1-F12 on top row
 - Arrow keys on right home row
 - Ctrl+Arrow for word jumping
-- Tmux macros (⌃-A [0-5]) for window switching
 - macOS shortcuts (⌘Z/X/C/V) on left bottom row
-- Encoder: Tmux window switching (⌃-A n / ⌃-A p)
+- Left home row modifiers (⌘/⌥/⇧/⌃) for convenience
 
 ---
 
@@ -506,8 +505,8 @@ Note: Keep position 6 (center UP_ARROW) unchanged
 
 **Update Layer 2** (positions 20-25, 33-38):
 ```
-Row 2 left (14-18): &tmux_1 &tmux_2 &tmux_3 &tmux_4 &tmux_5
-Row 2 right (20-25): HOME PGDN PGUP END INS &trans
+Row 2 left (14-18): &trans &trans &trans &trans &trans
+Row 2 right (20-25): HOME PGDN PGUP END INS PSCRN
 Row 3 right (33-38): LEFT DOWN UP RIGHT &trans &trans
 ```
 Note: Keep positions 19, 32, 45, 58 (center column) unchanged
@@ -517,6 +516,7 @@ Note: Keep positions 19, 32, 45, 58 (center column) unchanged
 - Test Page Up/Down for scrolling
 - Test Home/End for line navigation
 - Verify Insert key works
+- Test Print Screen key
 - Center arrow keys should still work
 
 **Rollback**: Restore original Layer 2 values
@@ -526,101 +526,30 @@ Note: Keep positions 19, 32, 45, 58 (center column) unchanged
 #### Task 12: Navigation - Ctrl+Arrow & macOS Shortcuts
 **File**: `config/eyelash_sofle.keymap`
 
-**Update Layer 2** (positions 46-50):
+**Update Layer 2** (positions 26, 40-44, 46-50, 52, 59):
 ```
-Bottom row (46-50): LC(LEFT) LC(DOWN) LC(UP) LC(RIGHT) trans
-```
-
-**Update Layer 2** (positions 40-44):
-```
-Bottom row (40-44): LG(Z) LG(X) LG(C) LG(V) trans
+Position 26:        &trans (remove CAPS)
+Bottom row (40-44): LG(Z) LG(X) LG(C) LG(V) &trans
+Bottom row (46-50): LC(LEFT) LC(DOWN) LC(UP) LC(RIGHT) &trans
+Position 52:        &none (remove C_MUTE)
+Position 59:        RGUI (right ⌘ key on thumb)
 ```
 
 **Testing**:
 - Test Ctrl+Arrow for word jumping
 - Test ⌘Z (undo), ⌘X (cut), ⌘C (copy), ⌘V (paste)
+- Test Right ⌘ key on thumb (position 59)
 - Verify in text editor and terminal
+- Confirm CAPS removed and position 26 is &trans
+- Confirm encoder position (52) is &none
 
 **Rollback**: Restore original Layer 2 values
 
 ---
 
-### Phase 6: Tmux Integration (Tasks 13-14)
+### Phase 6: System & Mouse Layer (Tasks 13-15)
 
-#### Task 13: Add Tmux Window Switching Macros
-**File**: `config/eyelash_sofle.keymap`
-
-**Note**: This complements the `tmux_prefix` macro from Task 1. While `tmux_prefix` lets you do ANY tmux command (prefix + key), these macros provide one-key shortcuts to switch to specific windows.
-
-**Changes** (add to macros section after tmux_prefix):
-```c
-/ {
-    macros {
-        // tmux_prefix already added in Task 1
-
-        tmux_0: tmux_0 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LCTRL &kp A &kp N0>;
-        };
-        tmux_1: tmux_1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LCTRL &kp A &kp N1>;
-        };
-        tmux_2: tmux_2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LCTRL &kp A &kp N2>;
-        };
-        tmux_3: tmux_3 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LCTRL &kp A &kp N3>;
-        };
-        tmux_4: tmux_4 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LCTRL &kp A &kp N4>;
-        };
-        tmux_5: tmux_5 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LCTRL &kp A &kp N5>;
-        };
-    };
-};
-```
-
-**Testing**:
-- Firmware compiles successfully
-- Don't test functionality yet (wait for Task 14)
-
-**Rollback**: Remove macro definitions
-
----
-
-#### Task 14: Add Tmux Macros to Layer 2
-**File**: `config/eyelash_sofle.keymap`
-
-**Update Layer 2** (positions 14-18, 44):
-```
-Row 2 (14-18): &tmux_1 &tmux_2 &tmux_3 &tmux_4 &tmux_5
-Row 4 (44):    &tmux_0
-```
-
-**Testing**:
-- Open tmux session with multiple windows
-- Test each tmux macro (0-5) switches to correct window
-- Verify Ctrl-A prefix works correctly
-
-**Rollback**: Restore original Layer 2 values
-
----
-
-### Phase 7: System & Mouse Layer (Tasks 15-17)
-
-#### Task 15: System Layer - Bluetooth & Output
+#### Task 13: System Layer - Bluetooth & Output
 **File**: `config/eyelash_sofle.keymap`
 
 **Update Layer 3** (positions 1-5, 14-15, 27-28):
@@ -640,7 +569,7 @@ Row 3 (27-28): OUT_USB   OUT_BLE
 
 ---
 
-#### Task 16: System Layer - Mouse Movement & Clicks
+#### Task 14: System Layer - Mouse Movement & Clicks
 **File**: `config/eyelash_sofle.keymap`
 
 **Update Layer 3** (positions 20, 33-36, 46-47, 58-60):
@@ -661,7 +590,7 @@ Thumb (58-60):    LCLK RCLK MCLK
 
 ---
 
-#### Task 17: System Layer - RGB & System Controls
+#### Task 15: System Layer - RGB & System Controls
 **File**: `config/eyelash_sofle.keymap`
 
 **Update Layer 3** (positions 7-12, 25):
@@ -681,27 +610,27 @@ Row 2 (25):   SYS_RESET
 
 ---
 
-### Phase 8: Encoder Configuration (Tasks 18-19)
+### Phase 7: Encoder Configuration (Tasks 16-17)
 
-#### Task 18: Configure Encoder for Layer 0 & 2
+#### Task 16: Configure Encoder for Layer 0 & 2
 **File**: `config/eyelash_sofle.keymap`
 
 **Update encoder bindings**:
 ```
 Layer 0: C_VOL_UP / C_VOL_DN
-Layer 2: &tmux_next / &tmux_prev (needs macros for ⌃-A n / ⌃-A p)
+Layer 2: scroll_encoder (already configured)
 ```
 
 **Testing**:
 - Test volume control on Layer 0
-- Test tmux window switching on Layer 2
+- Test scroll wheel on Layer 2
 - Verify smooth rotation
 
 **Rollback**: Restore original encoder configs
 
 ---
 
-#### Task 19: Configure Encoder for Layer 3
+#### Task 17: Configure Encoder for Layer 3
 **File**: `config/eyelash_sofle.keymap`
 
 **Update encoder bindings**:
@@ -718,9 +647,9 @@ Layer 3: MW_UP / MW_DOWN (mouse wheel)
 
 ---
 
-### Phase 9: Polish & Optimization (Tasks 20-21)
+### Phase 8: Polish & Optimization (Tasks 18-19)
 
-#### Task 20: Fine-tune Home Row Mod Timings
+#### Task 18: Fine-tune Home Row Mod Timings
 **File**: `config/eyelash_sofle.keymap`
 
 **Adjust `hrm` behavior**:
@@ -740,7 +669,7 @@ require-prior-idle-ms = <125>; // Adjust between 100-150
 
 ---
 
-#### Task 21: Update Layer 4 (Optional Macros)
+#### Task 19: Update Layer 4 (Optional Macros)
 **File**: `config/eyelash_sofle.keymap`
 
 **Add Ruby snippet macros** (optional):
@@ -880,19 +809,27 @@ Track which symbols you actually use and adjust positions:
 
 Choose per-layer based on workflow:
 - Layer 0: Volume (general use)
-- Layer 1: RGB effects (if you use RGB)
-- Layer 2: Tmux windows (development)
-- Layer 3: Mouse wheel (browsing)
+- Layer 1: Scroll (symbol layer)
+- Layer 2: Scroll (navigation layer)
+- Layer 3: Mouse wheel (system/mouse layer)
 
 ---
 
 ## Next Steps
 
-1. Start with **Task 1** (Repeat Key)
-2. Test thoroughly before moving to next task
-3. Take notes on what feels good/bad
-4. Adjust timings based on your typing style
-5. Don't hesitate to modify the plan based on experience
+Tasks 1-9 are ✅ COMPLETED!
+
+**Current Progress**: Phase 5 - Navigation Layer
+
+**Next Tasks**:
+1. **Task 10**: Navigation - Function Keys (F1-F12)
+2. **Task 11**: Navigation - Arrow Keys & Page Navigation
+3. **Task 12**: Navigation - Ctrl+Arrow & macOS Shortcuts
+
+Then continue with:
+- **Phase 6**: System & Mouse Layer (Tasks 13-15)
+- **Phase 7**: Encoder Configuration (Tasks 16-17)
+- **Phase 8**: Polish & Optimization (Tasks 18-19)
 
 **Remember**: This is YOUR keyboard. Adjust anything that doesn't feel right!
 
