@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: eyelash_sofle}
 layers:
-  LAYER0:
+  'layer0: Default layer':
   - $$mdi:keyboard-esc$$
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
@@ -57,15 +57,15 @@ layers:
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-command$$
   - {t: TMUX, s: '$$mdi:console$$'}
-  - layer1
+  - 'layer1: Symbol layer'
   - $$mdi:keyboard-space$$
   - $$mdi:play-pause$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - layer2
+  - 'layer2: Navigation layer'
   - {t: Repeat, s: '$$mdi:repeat$$'}
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:backspace-reverse-outline$$
-  layer1:
+  'layer1: Symbol layer':
   - {t: '$$mdi:transfer$$', type: trans}
   - '!'
   - '@'
@@ -126,12 +126,12 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:transfer$$', type: trans}
-  - layer3
+  - 'layer3: System layer'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  layer2:
-  - F11
+  'layer2: Navigation layer':
+  - {t: '$$mdi:transfer$$', type: trans}
   - F1
   - F2
   - F3
@@ -143,7 +143,7 @@ layers:
   - F8
   - F9
   - F10
-  - F12
+  - F11
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -155,8 +155,8 @@ layers:
   - PG DN
   - PG UP
   - END
-  - INS
   - $$mdi:printer-outline$$
+  - F12
   - {t: '$$mdi:transfer$$', type: trans}
   - LGUI
   - $$mdi:apple-keyboard-option$$
@@ -169,7 +169,7 @@ layers:
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - INS
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: Z, h: '$$mdi:apple-keyboard-command$$'}
   - {t: X, h: '$$mdi:apple-keyboard-command$$'}
@@ -195,7 +195,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  layer3:
+  'layer3: System layer':
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -260,7 +260,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  layer4:
+  'layer4: Mouse layer':
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
