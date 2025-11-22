@@ -47,13 +47,19 @@ Keymaps are defined in Device Tree format:
 - `config/eyelash_sofle.keymap` - Primary keymap edited by users
 - `boards/arm/eyelash_sofle/eyelash_sofle.keymap` - Board default keymap
 
-Key features in the keymap:
-- 5 layers (layer0 through layer4)
-- Custom behaviors for mouse movement (`&mmv`) and scrolling (`&msc`)
-- Encoder configurations per layer
-- Soft-off combo on specific key positions
-- RGB underglow controls
-- Bluetooth profile switching
+**5 Layers:**
+- **Layer 0 (Default)**: QWERTY base with home row mods, media controls, tmux prefix, key repeat
+- **Layer 1 (Symbol)**: Ruby-optimized symbols with vim hjkl arrows
+- **Layer 2 (Navigation)**: Function keys (F1-F12), arrows, page navigation, macOS shortcuts
+- **Layer 3 (System)**: Bluetooth profiles, RGB controls, USB/BLE switching, soft-off, bootloader
+- **Layer 4 (Mouse)**: Mouse movement/scroll (vim hjkl), mouse buttons (L/M/R + MB4/MB5)
+
+**Custom Behaviors:**
+- Home row mods (`&hrm`) with balanced flavor, 200ms tapping term
+- Key repeat behavior for double symbols (==, ::, ||)
+- Tmux prefix macro (Ctrl+A) on left thumb
+- Mouse movement (`&mmv`) and scrolling (`&msc`) with acceleration
+- Soft-off with 2-second hold time
 
 ## Build Configuration
 
@@ -139,11 +145,28 @@ Mouse behavior is customized in keymap headers:
 4. **Download firmware**: Get `.uf2` files from GitHub Actions artifacts
 5. **Keymap visuals**: Updated automatically by draw.yml workflow
 
+## Layer Access Keys
+
+- **Layer 1 (Symbol)**: Hold position 56 (left thumb, 4th key)
+- **Layer 2 (Navigation)**: Hold position 60 (right thumb, 2nd key)
+- **Layer 3 (System)**: Hold position 60 in Layer 1 (momentary layer 3)
+- **Layer 4 (Mouse)**: Hold position 53 (left thumb, 1st usable key)
+
+## Position Reference
+
+The keyboard has 64 positions (0-63) across 5 rows:
+- **Rows 1-4**: 13 keys each (6 left + 1 center + 6 right)
+- **Row 5 (thumb)**: 12 keys (6 left + 1 center + 5 right)
+- **Position 52**: Encoder (hardwired, must be `&none`)
+- **Position 58**: Center thumb key (accessible by both thumbs)
+
 ## Important Notes
 
 - Device tree files use `.dtsi` (include) and `.dts` (source) conventions
 - The keymap uses ZMK's behavior system (`&kp`, `&mo`, `&mkp`, `&mmv`, `&msc`, etc.)
 - Split keyboard requires building separate firmware for each half
 - The left half is typically the "central" side (USB connection)
-- Bluetooth profiles are switched via layer 2 (0-4 profiles supported)
-- Soft-off is triggered by combo: positions 14, 28, 40 pressed together
+- Bluetooth profiles (BT1-BT5) are accessed via Layer 3
+- Soft-off is triggered via Layer 3, position 53 (hold for 2 seconds)
+- Home row mods: Left `A=⌘, S=⌥, D=⇧, F=⌃` | Right `J=⌃, K=⇧, L=⌥, ;=⌘`
+- Mouse layer uses vim hjkl pattern for both movement and scrolling
