@@ -226,6 +226,135 @@ Currently empty - available for:
 
 ---
 
+## ACTUAL IMPLEMENTED LAYERS (Current State)
+
+### Layer 0: Base (QWERTY + Home Row Mods) ✅ IMPLEMENTED
+
+```
+┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
+│ ESC │  1  │  2  │  3  │  4  │  5  │       │VOL+ │       │  6  │  7  │  8  │  9  │  0  │BSPC │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ TAB │  Q  │  W  │  E  │  R  │  T  │       │VOL- │       │  Y  │  U  │  I  │  O  │  P  │  -  │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│  '  │ A/⌘ │ S/⌥ │ D/⇧ │ F/⌃ │  G  │       │PREV │       │  H  │ J/⌃ │ K/⇧ │ L/⌥ │ ;/⌘ │  =  │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│  `  │  Z  │  X  │  C  │  V  │  B  │       │NEXT │       │  N  │  M  │  ,  │  .  │  /  │  \\  │
+└─────┼─────┼─────┼─────┼─────┼─────┼─────┐ ├─────┤ ┌─────┼─────┼─────┼─────┼─────┼─────┴─────┘
+      │none │ ⌃   │ ⌘   │⌃-A  │ L1  │ SPC │ │PLAY │ │ RET │ L2  │REPT │ ⇧   │ DEL │
+      └─────┴─────┴─────┴─────┴─────┴─────┘ └─────┘ └─────┴─────┴─────┴─────┴─────┘
+       52    53    54    55    56    57      58      59    60    61    62    63
+```
+
+**Status**: ✅ Fully implemented
+**Encoder**: Volume Up/Down
+
+---
+
+### Layer 1: Symbols (Ruby Optimized) ✅ IMPLEMENTED
+
+```
+┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
+│ ─── │  !  │  @  │  #  │  $  │  %  │       │  ↑  │       │  ^  │  &  │  *  │ ─── │ ─── │ DEL │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ─── │  ~  │  ?  │  *  │  _  │  |  │       │  ↓  │       │  .  │  (  │  )  │ ─── │ ─── │ ─── │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ─── │  -  │  +  │  <  │  =  │  >  │       │  ←  │       │  :  │  [  │  ]  │ ─── │ ─── │ ─── │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ─── │  _  │  *  │  /  │  %  │  /  │       │  →  │       │  \\  │  {  │  }  │ ─── │ ─── │ ─── │
+└─────┼─────┼─────┼─────┼─────┼─────┼─────┐ ├─────┤ ┌─────┼─────┼─────┼─────┼─────┼─────┴─────┘
+      │none │ ─── │ ─── │ ─── │ ─── │ ─── │ │ RET │ │ ─── │ L3  │ ─── │ ─── │ ─── │
+      └─────┴─────┴─────┴─────┴─────┴─────┘ └─────┘ └─────┴─────┴─────┴─────┴─────┘
+```
+
+**Status**: ✅ Fully implemented
+**Encoder**: Scroll (vertical)
+**Access**: Hold Layer 1 key (position 56)
+**To Layer 3**: Hold position 60 while in Layer 1
+
+---
+
+### Layer 2: Navigation + Function Keys ✅ IMPLEMENTED
+
+```
+┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
+│ ─── │ F1  │ F2  │ F3  │ F4  │ F5  │       │ ─── │       │ F6  │ F7  │ F8  │ F9  │ F10 │ F11 │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ─── │ ─── │ ─── │ ─── │ ─── │ ─── │       │ ─── │       │ HOME│ PGDN│ PGUP│ END │PRTSC│ F12 │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ─── │ ⌘   │  ⌥  │  ⇧  │  ⌃  │ ─── │       │ ─── │       │  ←  │  ↓  │  ↑  │  →  │ ─── │ INS │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ─── │ ⌘Z  │ ⌘X  │ ⌘C  │ ⌘V  │ ─── │       │ ─── │       │ ⌃←  │ ⌃↓  │ ⌃↑  │ ⌃→  │ ─── │ ─── │
+└─────┼─────┼─────┼─────┼─────┼─────┼─────┐ ├─────┤ ┌─────┼─────┼─────┼─────┼─────┼─────┴─────┘
+      │none │ ─── │ ─── │ ─── │ ─── │ ─── │ │ ─── │ │ ⌘   │ ─── │ ─── │ ─── │ ─── │
+      └─────┴─────┴─────┴─────┴─────┴─────┘ └─────┘ └─────┴─────┴─────┴─────┴─────┘
+```
+
+**Status**: ✅ Fully implemented
+**Encoder**: Scroll (vertical)
+**Access**: Hold Layer 2 key (position 60)
+**Notes**:
+- F11 at position 12 (row 1 right end)
+- F12 at position 25 (row 2 right end)
+- Print Screen at position 24 (row 2)
+- Insert at position 38 (row 3 right end)
+
+---
+
+### Layer 3: System + Bluetooth ⚠️ PLANNED (NOT YET IMPLEMENTED)
+
+```
+┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
+│ ─── │ BT1 │ BT2 │ BT3 │ BT4 │ BT5 │       │ ─── │       │ RGB+│ RGB-│ EFF+│ EFF-│ TOG │BOOT │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ─── │BTCLR│BTCLA│ ─── │ ─── │ ─── │       │ ─── │       │ ─── │ ─── │ ─── │ ─── │ ─── │RESET│
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ─── │ USB │ BLE │ ─── │ ─── │ ─── │       │ ─── │       │ ─── │ ─── │ ─── │ ─── │ ─── │ ─── │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ─── │ ─── │ ─── │ ─── │ ─── │ ─── │       │ ─── │       │ ─── │ ─── │ ─── │ ─── │ ─── │ ─── │
+└─────┼─────┼─────┼─────┼─────┼─────┼─────┐ ├─────┤ ┌─────┼─────┼─────┼─────┼─────┼─────┴─────┘
+      │MUTE │ ─── │ ─── │ ─── │ ─── │ ─── │ │ ─── │ │ ─── │ ─── │ ─── │ ─── │ ─── │
+      └─────┴─────┴─────┴─────┴─────┴─────┘ └─────┘ └─────┴─────┴─────┴─────┴─────┘
+```
+
+**Status**: ⚠️ NOT YET IMPLEMENTED (currently all `&trans`)
+**Encoder**: TBD (Task 16/17)
+**Access**: Hold mo 3 (position 60 in Layer 1)
+**Features**:
+- Bluetooth profiles 1-5, clear functions
+- USB/BLE output selection
+- RGB controls (brightness, effects, toggle)
+- System controls (bootloader, reset)
+
+---
+
+### Layer 4: Mouse ⚠️ PLANNED (NOT YET IMPLEMENTED)
+
+```
+┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
+│ ─── │ ─── │ ─── │ ─── │ ─── │ ─── │       │ ─── │       │ ─── │ ─── │ ─── │ ─── │ ─── │ ─── │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ─── │ ─── │ ─── │ ─── │ ─── │ ─── │       │ ─── │       │ M↑  │ MW← │ MW→ │ ─── │ ─── │ ─── │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ─── │ ─── │ ─── │ ─── │ ─── │ ─── │       │ ─── │       │ M←  │ M↓  │ M↑  │ M→  │ ─── │ ─── │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│ ─── │ ─── │ ─── │ ─── │ ─── │ ─── │       │ ─── │       │ MW↓ │ MW↑ │ ─── │ ─── │ ─── │ ─── │
+└─────┼─────┼─────┼─────┼─────┼─────┼─────┐ ├─────┤ ┌─────┼─────┼─────┼─────┼─────┼─────┴─────┘
+      │MUTE │ ─── │ ─── │ ─── │ ─── │ LCLK│ │ RCLK│ │ MCLK│ ─── │ ─── │ ─── │ ─── │
+      └─────┴─────┴─────┴─────┴─────┴─────┘ └─────┘ └─────┴─────┴─────┴─────┴─────┘
+```
+
+**Status**: ⚠️ NOT YET IMPLEMENTED (currently all `&trans`)
+**Encoder**: Mouse wheel (vertical scroll) - Task 17
+**Access**: TBD (need to add layer access key)
+**Features**:
+- Mouse movement (M←/↓/↑/→) on right home area
+- Mouse wheel (MW←/→/↓/↑) for scrolling
+- Mouse clicks (L/R/M) on thumbs
+
+**NOTE**: Layer 4 currently has no access key defined. Need to add `&mo 4` somewhere in the keymap.
+
+---
+
 ## Implementation Tasks
 
 ### Phase 1: Foundation (Tasks 1-3)
@@ -821,13 +950,19 @@ Tasks 1-12 are ✅ COMPLETED!
 
 **Current Progress**: Phase 6 - System & Mouse Layer
 
+**🚨 ISSUES FOUND**:
+1. **Syntax Error in Layer 2**: Line 109, position 38 has `&INS` (missing `kp`) - should be `&kp INS`
+2. **Layer Organization**: The keymap uses Layer 4 for "Mouse layer" instead of combining System+Mouse in Layer 3
+3. **F-key Layout**: Layer 2 has F1-F11 on row 1, F12 on row 2 (differs from plan's F11/F12 positions)
+
 **Next Tasks**:
-1. **Task 13**: System Layer - Bluetooth & Output
-2. **Task 14**: System Layer - Mouse Movement & Clicks
-3. **Task 15**: System Layer - RGB & System Controls
+1. **Fix syntax error**: Change `&INS` to `&kp INS` in layer_2 (line 109)
+2. **Task 13**: System Layer - Bluetooth & Output (Layer 3)
+3. **Task 14**: Mouse Movement & Clicks (Layer 4)
+4. **Task 15**: RGB & System Controls (Layer 3)
 
 Then continue with:
-- **Phase 7**: Encoder Configuration (Tasks 16-17) - Partially done, needs Layer 3 encoder
+- **Phase 7**: Encoder Configuration (Tasks 16-17) - Partially done, needs Layer 3/4 encoders
 - **Phase 8**: Polish & Optimization (Tasks 18-19)
 
 **Remember**: This is YOUR keyboard. Adjust anything that doesn't feel right!

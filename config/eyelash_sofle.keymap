@@ -86,7 +86,7 @@
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
-            display-name = "LAYER0";
+            display-name = "layer0: Default layer";
         };
 
         layer_1 {
@@ -98,20 +98,20 @@
 &none       &trans      &trans      &trans      &trans      &trans       &kp ENTER        &trans      &mo 3       &trans      &trans      &trans
             >;
 
-            display-name = "layer1";
+            display-name = "layer1: Symbol layer";
             sensor-bindings = <&scroll_encoder>;
         };
 
         layer_2 {
             bindings = <
-&kp F11    &kp F1        &kp F2          &kp F3        &kp F4        &kp F5          &trans           &kp F6     &kp F7           &kp F8           &kp F9            &kp F10       &kp F12
-&trans     &trans        &trans          &trans        &trans        &trans          &trans           &kp HOME   &kp PG_DN        &kp PG_UP        &kp END           &kp INS       &kp PSCRN
-&trans     &kp LGUI      &kp LALT        &kp LSHFT     &kp LCTRL     &trans          &trans           &kp LEFT   &kp DOWN         &kp UP           &kp RIGHT         &trans        &trans
+&trans     &kp F1        &kp F2          &kp F3        &kp F4        &kp F5          &trans           &kp F6     &kp F7           &kp F8           &kp F9            &kp F10       &kp F11
+&trans     &trans        &trans          &trans        &trans        &trans          &trans           &kp HOME   &kp PG_DN        &kp PG_UP        &kp END           &kp PSCRN     &kp F12
+&trans     &kp LGUI      &kp LALT        &kp LSHFT     &kp LCTRL     &trans          &trans           &kp LEFT   &kp DOWN         &kp UP           &kp RIGHT         &trans        &kp INS
 &trans     &kp LG(Z)     &kp LG(X)       &kp LG(C)     &kp LG(V)     &trans          &trans           &kp LC(LEFT)  &kp LC(DOWN)  &kp LC(UP)       &kp LC(RIGHT)     &trans        &trans
 &none      &trans        &trans          &trans        &trans        &trans          &trans           &kp RGUI   &trans           &trans           &trans            &trans
             >;
 
-            display-name = "layer2";
+            display-name = "layer2: Navigation layer";
             sensor-bindings = <&scroll_encoder>;
         };
 
@@ -124,7 +124,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
-            display-name = "layer3";
+            display-name = "layer3: System layer";
             sensor-bindings = <&scroll_encoder>;
         };
 
@@ -136,7 +136,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
             >;
-         display-name = "layer4";
+         display-name = "layer4: Mouse layer";
             sensor-bindings = <&scroll_encoder>;
         };
     };
