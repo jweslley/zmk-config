@@ -817,18 +817,17 @@ Choose per-layer based on workflow:
 
 ## Next Steps
 
-Tasks 1-9 are ✅ COMPLETED!
+Tasks 1-12 are ✅ COMPLETED!
 
-**Current Progress**: Phase 5 - Navigation Layer
+**Current Progress**: Phase 6 - System & Mouse Layer
 
 **Next Tasks**:
-1. **Task 10**: Navigation - Function Keys (F1-F12)
-2. **Task 11**: Navigation - Arrow Keys & Page Navigation
-3. **Task 12**: Navigation - Ctrl+Arrow & macOS Shortcuts
+1. **Task 13**: System Layer - Bluetooth & Output
+2. **Task 14**: System Layer - Mouse Movement & Clicks
+3. **Task 15**: System Layer - RGB & System Controls
 
 Then continue with:
-- **Phase 6**: System & Mouse Layer (Tasks 13-15)
-- **Phase 7**: Encoder Configuration (Tasks 16-17)
+- **Phase 7**: Encoder Configuration (Tasks 16-17) - Partially done, needs Layer 3 encoder
 - **Phase 8**: Polish & Optimization (Tasks 18-19)
 
 **Remember**: This is YOUR keyboard. Adjust anything that doesn't feel right!
