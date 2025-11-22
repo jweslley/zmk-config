@@ -40,7 +40,7 @@ layers:
   - {t: L, h: '$$mdi:apple-keyboard-option$$'}
   - {t: ;, h: LGUI, s: ':'}
   - {t: '=', s: +}
-  - $$mdi:apple-keyboard-shift$$
+  - {t: '`', s: '~'}
   - Z
   - X
   - C
@@ -66,7 +66,7 @@ layers:
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:backspace-reverse-outline$$
   layer1:
-  - {t: '`', s: '~'}
+  - {t: '$$mdi:transfer$$', type: trans}
   - '!'
   - '@'
   - '#'
@@ -76,8 +76,8 @@ layers:
   - ^
   - '&'
   - '*'
-  - (
-  - )
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
   - '~'
@@ -89,9 +89,9 @@ layers:
   - {t: ., s: '>'}
   - (
   - )
-  - {t: '''', s: '"'}
-  - {t: \, s: '|'}
-  - '|'
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '-', s: _}
   - +
@@ -102,21 +102,21 @@ layers:
   - ':'
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
-  - (
-  - )
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - _
   - '*'
   - {t: /, s: '?'}
   - '%'
-  - '&'
+  - {t: /, s: '?'}
   - $$mdi:arrow-right-bold$$
-  - '|'
+  - {t: \, s: '|'}
   - '{'
   - '}'
-  - {t: '[', s: '{'}
-  - {t: ']', s: '}'}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: ghost}
   - {t: '$$mdi:transfer$$', type: trans}
