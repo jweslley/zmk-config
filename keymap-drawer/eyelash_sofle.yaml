@@ -108,8 +108,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - _
   - '*'
-  - {t: /, s: '?'}
   - '%'
+  - {t: /, s: '?'}
   - '|'
   - $$mdi:arrow-right-bold$$
   - {t: \, s: '|'}
