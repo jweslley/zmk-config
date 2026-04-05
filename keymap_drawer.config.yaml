@@ -212,6 +212,10 @@ parse_config:
       type: ghost
 
     # Custom behaviors
+    "&td_comma_semi":
+      tap: ","
+      shifted: ";"
+      type: tap_dance
     "&tmux_prefix":
       tap: "TMUX"
       shifted: $$mdi:console$$

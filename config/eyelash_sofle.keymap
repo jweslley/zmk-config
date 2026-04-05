@@ -247,7 +247,7 @@
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans   &trans    &kp LPAR  &kp RPAR
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans   &kp LPAR  &kp RPAR  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp N7   &kp N8   &kp N9   &kp PLUS  &kp PRCNT &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp N4   &kp N5   &kp N6   &kp MINUS &kp ASTRK &kp EQUAL
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp N1   &kp N2   &kp N3   &kp DOT   &kp FSLH  &trans
