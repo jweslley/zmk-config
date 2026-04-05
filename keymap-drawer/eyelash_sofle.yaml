@@ -87,7 +87,7 @@ layers:
   - '!'
   - $$mdi:arrow-down-bold$$
   - _
-  - '&td_comma_semi'
+  - {t: ',', s: ;, type: tap_dance}
   - (
   - )
   - '%'
@@ -271,9 +271,9 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
   - (
   - )
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
