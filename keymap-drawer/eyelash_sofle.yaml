@@ -82,8 +82,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - KP PLUS
-  - KP MINUS
+  - +
+  - '-'
   - {t: '!', s: '?', type: tap_dance}
   - $$mdi:arrow-down-bold$$
   - _
@@ -96,11 +96,11 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - <
   - '>'
-  - KP EQUAL
+  - '='
   - '|'
   - $$mdi:arrow-left-bold$$
   - ':'
-  - KP DOT
+  - .
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
   - '@'
@@ -109,10 +109,10 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: \, s: '|'}
   - '~'
-  - KP MULTIPLY
+  - '*'
   - '&'
   - $$mdi:arrow-right-bold$$
-  - KP DIVIDE
+  - /
   - '#'
   - '{'
   - '}'
@@ -281,10 +281,10 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - KP 7
-  - KP 8
-  - KP 9
-  - KP PLUS
+  - '7'
+  - '8'
+  - '9'
+  - +
   - '%'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -294,12 +294,12 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - KP 4
-  - KP 5
-  - KP 6
-  - KP MINUS
-  - KP MULTIPLY
-  - KP EQUAL
+  - '4'
+  - '5'
+  - '6'
+  - '-'
+  - '*'
+  - '='
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -307,11 +307,11 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - KP 1
-  - KP 2
-  - KP 3
-  - KP DOT
-  - KP DIVIDE
+  - '1'
+  - '2'
+  - '3'
+  - .
+  - /
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: ghost}
   - {type: held}
@@ -321,7 +321,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - KP 0
+  - '0'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
