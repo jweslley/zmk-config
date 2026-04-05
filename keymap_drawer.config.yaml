@@ -212,6 +212,22 @@ parse_config:
       type: ghost
 
     # Custom behaviors
+    "&td_mo1_num":
+      tap: $$mdi:symbol$$
+      shifted: $$mdi:numeric$$
+      type: tap_dance
+    "&td_dot_comma":
+      tap: "."
+      shifted: ","
+      type: tap_dance
+    "&td_plus_minus":
+      tap: "+"
+      shifted: "-"
+      type: tap_dance
+    "&td_mul_div":
+      tap: "*"
+      shifted: "/"
+      type: tap_dance
     "&td_comma_semi":
       tap: ","
       shifted: ";"

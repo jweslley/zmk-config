@@ -195,6 +195,34 @@
             tapping-term-ms = <200>;
             bindings = <&kp EXCL>, <&kp QMARK>;
         };
+
+        td_mo1_num: tap_dance_mo1_num {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo 1>, <&tog 4>;
+        };
+
+        td_dot_comma: tap_dance_dot_comma {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp KP_DOT>, <&kp COMMA>;
+        };
+
+        td_plus_minus: tap_dance_plus_minus {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp KP_PLUS>, <&kp KP_MINUS>;
+        };
+
+        td_mul_div: tap_dance_mul_div {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp KP_MULTIPLY>, <&kp KP_DIVIDE>;
+        };
     };
 
     keymap {
@@ -206,7 +234,7 @@
 &kp TAB     &kp Q            &kp W                     &kp E                &kp R          &kp T        &kp C_VOL_DN     &kp Y      &kp U             &kp I               &kp O            &kp P             &kp MINUS
 &kp APOS    &hml LGUI A      &hml LALT S               &hml LSHFT D         &hml LCTRL F   &kp G        &kp C_PREV       &kp H      &hmr RCTRL J      &hmr RSHFT K        &hmr LALT L      &hmr LGUI SEMI    &kp EQUAL
 &kp GRAVE   &kp Z            &kp X                     &kp C                &kp V          &kp B        &kp C_NEXT       &kp N      &kp M             &kp COMMA           &kp DOT          &kp FSLH          &kp BSLH
-&none       &mo 4            &sk_cmd_shift LG(LSHIFT)  &tmux_prefix         &mo 1          &kp SPACE    &kp C_PP         &kp ENTER  &mo 2             &key_repeat         &kp RIGHT_SHIFT  &kp DELETE
+&none       &mo 5            &sk_cmd_shift LG(LSHIFT)  &tmux_prefix         &td_mo1_num    &kp SPACE    &kp C_PP         &kp ENTER  &mo 2             &key_repeat         &kp RIGHT_SHIFT  &kp DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -215,10 +243,10 @@
 
         layer_1 {
             bindings = <
-&trans     &trans     &trans    &trans     &trans     &trans    &kp UP_ARROW     &trans      &trans           &trans    &trans    &trans     &trans
-&trans     &trans     &trans    &kp KP_PLUS  &kp KP_MINUS  &td_excl_qmark  &kp DOWN_ARROW   &kp UNDER   &td_comma_semi   &kp LPAR  &kp RPAR  &kp PRCNT  &kp DLLR
-&kp GRAVE  &trans     &kp LT    &kp GT       &kp KP_EQUAL  &kp PIPE        &kp LEFT_ARROW   &kp COLON   &kp KP_DOT       &kp LBKT  &kp RBKT  &kp AT     &kp CARET
-&trans     &trans     &kp BSLH  &kp TILDE    &kp KP_MULTIPLY &kp AMPS      &kp RIGHT_ARROW  &kp KP_DIVIDE &kp HASH      &kp LBRC  &kp RBRC  &trans     &trans
+&trans     &trans     &trans      &trans         &trans          &trans          &kp UP_ARROW     &trans        &trans           &trans    &trans    &trans   &trans
+&trans     &trans     &kp CARET   &kp KP_PLUS    &kp KP_MINUS    &td_excl_qmark  &kp DOWN_ARROW   &kp UNDER     &td_comma_semi   &kp LPAR  &kp RPAR  &trans   &trans
+&kp GRAVE  &kp AT     &kp LT      &kp GT         &kp KP_EQUAL    &kp PIPE        &kp LEFT_ARROW   &kp COLON     &kp KP_DOT       &kp LBKT  &kp RBKT  &kp DLLR &trans
+&trans     &kp PRCNT  &kp BSLH    &kp TILDE      &kp KP_MULTIPLY &kp AMPS        &kp RIGHT_ARROW  &kp KP_DIVIDE &kp HASH         &kp LBRC  &kp RBRC  &trans   &trans
 &none      &trans     &trans    &trans     &trans     &trans    &kp ENTER        &trans      &mo 3            &trans    &trans    &trans
             >;
 
@@ -254,11 +282,11 @@
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans      &kp LPAR      &kp RPAR      &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_PLUS   &kp PRCNT     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_MINUS  &kp KP_MULTIPLY &kp KP_EQUAL
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp KP_DOT    &kp KP_DIVIDE &trans
-&none   &trans  &mo 5   &trans  &trans  &trans  &trans  &trans      &kp KP_N0   &trans       &trans        &trans
+&trans  &trans  &trans  &trans       &trans      &trans    &trans  &trans          &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans       &trans      &trans    &trans  &td_mul_div     &kp KP_N7  &kp KP_N8  &kp KP_N9  &trans  &trans
+&trans  &trans  &trans  &kp LPAR     &kp EQUAL   &kp RPAR  &trans  &td_plus_minus  &kp KP_N1  &kp KP_N2  &kp KP_N3  &trans  &trans
+&trans  &trans  &trans  &trans       &trans      &kp PRCNT &trans  &td_dot_comma   &kp KP_N4  &kp KP_N5  &kp KP_N6  &trans  &trans
+&none   &trans  &trans  &trans       &tog 4      &trans    &trans  &trans          &kp KP_N0  &trans     &trans     &trans
             >;
             display-name = "layer4: Number layer";
             sensor-bindings = <&scroll_encoder>;
