@@ -47,19 +47,21 @@ Keymaps are defined in Device Tree format:
 - `config/eyelash_sofle.keymap` - Primary keymap edited by users
 - `boards/arm/eyelash_sofle/eyelash_sofle.keymap` - Board default keymap
 
-**5 Layers:**
+**6 Layers:**
 - **Layer 0 (Default)**: QWERTY base with home row mods, media controls, tmux prefix, key repeat
-- **Layer 1 (Symbol)**: Ruby-optimized symbols with vim hjkl arrows
+- **Layer 1 (Symbol)**: Symbols optimized for Ruby, tmux, vim, and Markdown — `^@<>=|` left, `,/; ( ) [ ] { } _ : . / # $ %` right, arrows on center column
 - **Layer 2 (Navigation)**: Function keys (F1-F12), arrows, page navigation, macOS shortcuts
 - **Layer 3 (System)**: Bluetooth profiles, RGB controls, USB/BLE switching, soft-off, bootloader
-- **Layer 4 (Mouse)**: Mouse movement/scroll (vim hjkl), mouse buttons (L/M/R + MB4/MB5)
+- **Layer 4 (Number)**: Numpad layout right hand (7-8-9 top, 1-2-3 home, 4-5-6 bottom, 0 thumb), operators left (*/÷, +/-, ./,), `( = )` and `%` left
+- **Layer 5 (Mouse)**: Mouse movement/scroll, mouse buttons (L/M/R + MB4/MB5)
 
 **Custom Behaviors:**
-- Home row mods (`&hrm`) with balanced flavor, 200ms tapping term
-- Key repeat behavior for double symbols (==, ::, ||)
+- Home row mods (`&hml`/`&hmr`) with balanced flavor, 280ms tapping term, require-prior-idle
+- Key repeat behavior on right thumb
 - Tmux prefix macro (Ctrl+A) on left thumb
 - Mouse movement (`&mmv`) and scrolling (`&msc`) with acceleration
 - Soft-off with 2-second hold time
+- Tap-dances: `td_comma_semi` (,/;), `td_excl_qmark` (!/?), `td_mo1_num` (sym/num), `td_dot_comma` (./,), `td_plus_minus` (+/-), `td_mul_div` (*/÷)
 
 ## Build Configuration
 
@@ -147,10 +149,11 @@ Mouse behavior is customized in keymap headers:
 
 ## Layer Access Keys
 
-- **Layer 1 (Symbol)**: Hold position 56 (left thumb, 4th key)
-- **Layer 2 (Navigation)**: Hold position 60 (right thumb, 2nd key)
-- **Layer 3 (System)**: Hold position 60 in Layer 1 (momentary layer 3)
-- **Layer 4 (Mouse)**: Hold position 53 (left thumb, 1st usable key)
+- **Layer 1 (Symbol)**: Hold LH1/56 (left thumb); double-tap LH1/56 toggles Layer 4
+- **Layer 2 (Navigation)**: Hold RH1/60 (right thumb)
+- **Layer 3 (System)**: Hold RH1/60 while in Layer 1
+- **Layer 4 (Number)**: Double-tap LH1/56 to toggle on; press LH1/56 again to exit
+- **Layer 5 (Mouse)**: Hold LH4/53 (left thumb)
 
 ## Position Reference
 
@@ -167,6 +170,7 @@ The keyboard has 64 positions (0-63) across 5 rows:
 - Split keyboard requires building separate firmware for each half
 - The left half is typically the "central" side (USB connection)
 - Bluetooth profiles (BT1-BT5) are accessed via Layer 3
-- Soft-off is triggered via Layer 3, position 53 (hold for 2 seconds)
+- Soft-off is triggered via Layer 3, position LH4/53 (hold for 2 seconds)
 - Home row mods: Left `A=⌘, S=⌥, D=⇧, F=⌃` | Right `J=⌃, K=⇧, L=⌥, ;=⌘`
-- Mouse layer uses vim hjkl pattern for both movement and scrolling
+- Mouse layer uses hjkl pattern for movement and scrolling on right hand
+- Number layer has `( = )` on LM2/LM1/LM0 and `%` on LB0 for expression entry
