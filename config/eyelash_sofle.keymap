@@ -188,6 +188,13 @@
             tapping-term-ms = <200>;
             bindings = <&kp COMMA>, <&kp SEMI>;
         };
+
+        td_excl_qmark: tap_dance_excl_qmark {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp EXCL>, <&kp QMARK>;
+        };
     };
 
     keymap {
@@ -209,9 +216,9 @@
         layer_1 {
             bindings = <
 &trans     &trans     &trans    &trans     &trans     &trans    &kp UP_ARROW     &trans      &trans           &trans    &trans    &trans     &trans
-&trans     &trans     &trans    &kp TILDE  &kp QMARK  &kp EXCL  &kp DOWN_ARROW   &kp UNDER   &td_comma_semi   &kp LPAR  &kp RPAR  &kp PRCNT  &kp DLLR
-&kp GRAVE  &kp PLUS   &kp GT    &kp LT     &kp EQUAL  &kp PIPE  &kp LEFT_ARROW   &kp COLON   &kp DOT          &kp LBKT  &kp RBKT  &kp AT     &kp CARET
-&trans     &trans     &kp BSLH  &kp MINUS  &kp ASTRK  &kp AMPS  &kp RIGHT_ARROW  &kp FSLH    &kp HASH         &kp LBRC  &kp RBRC  &trans     &trans
+&trans     &trans     &trans    &kp KP_PLUS  &kp KP_MINUS  &td_excl_qmark  &kp DOWN_ARROW   &kp UNDER   &td_comma_semi   &kp LPAR  &kp RPAR  &kp PRCNT  &kp DLLR
+&kp GRAVE  &trans     &kp LT    &kp GT       &kp KP_EQUAL  &kp PIPE        &kp LEFT_ARROW   &kp COLON   &kp KP_DOT       &kp LBKT  &kp RBKT  &kp AT     &kp CARET
+&trans     &trans     &kp BSLH  &kp TILDE    &kp KP_MULTIPLY &kp AMPS      &kp RIGHT_ARROW  &kp KP_DIVIDE &kp HASH      &kp LBRC  &kp RBRC  &trans     &trans
 &none      &trans     &trans    &trans     &trans     &trans    &kp ENTER        &trans      &mo 3            &trans    &trans    &trans
             >;
 
@@ -247,11 +254,11 @@
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans   &kp LPAR  &kp RPAR  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp N7   &kp N8   &kp N9   &kp PLUS  &kp PRCNT &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp N4   &kp N5   &kp N6   &kp MINUS &kp ASTRK &kp EQUAL
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp N1   &kp N2   &kp N3   &kp DOT   &kp FSLH  &trans
-&none   &trans  &mo 5   &trans  &trans  &trans  &trans  &trans   &kp N0   &trans   &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans      &kp LPAR      &kp RPAR      &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_PLUS   &kp PRCNT     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_MINUS  &kp KP_MULTIPLY &kp KP_EQUAL
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp KP_DOT    &kp KP_DIVIDE &trans
+&none   &trans  &mo 5   &trans  &trans  &trans  &trans  &trans      &kp KP_N0   &trans       &trans        &trans
             >;
             display-name = "layer4: Number layer";
             sensor-bindings = <&scroll_encoder>;

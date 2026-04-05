@@ -216,6 +216,10 @@ parse_config:
       tap: ","
       shifted: ";"
       type: tap_dance
+    "&td_excl_qmark":
+      tap: "!"
+      shifted: "?"
+      type: tap_dance
     "&tmux_prefix":
       tap: "TMUX"
       shifted: $$mdi:console$$
