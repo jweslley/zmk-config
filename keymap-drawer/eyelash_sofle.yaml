@@ -82,9 +82,9 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - '~'
-  - '?'
-  - '!'
+  - KP PLUS
+  - KP MINUS
+  - {t: '!', s: '?', type: tap_dance}
   - $$mdi:arrow-down-bold$$
   - _
   - {t: ',', s: ;, type: tap_dance}
@@ -93,14 +93,14 @@ layers:
   - '%'
   - $
   - {t: '`', s: '~'}
-  - +
-  - '>'
+  - {t: '$$mdi:transfer$$', type: trans}
   - <
-  - {t: '=', s: +}
+  - '>'
+  - KP EQUAL
   - '|'
   - $$mdi:arrow-left-bold$$
   - ':'
-  - {t: ., s: '>'}
+  - KP DOT
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
   - '@'
@@ -108,11 +108,11 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: \, s: '|'}
-  - {t: '-', s: _}
-  - '*'
+  - '~'
+  - KP MULTIPLY
   - '&'
   - $$mdi:arrow-right-bold$$
-  - {t: /, s: '?'}
+  - KP DIVIDE
   - '#'
   - '{'
   - '}'
@@ -281,10 +281,10 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '7', s: '&'}
-  - {t: '8', s: '*'}
-  - {t: '9', s: (}
-  - +
+  - KP 7
+  - KP 8
+  - KP 9
+  - KP PLUS
   - '%'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -294,12 +294,12 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '4', s: $}
-  - {t: '5', s: '%'}
-  - {t: '6', s: ^}
-  - {t: '-', s: _}
-  - '*'
-  - {t: '=', s: +}
+  - KP 4
+  - KP 5
+  - KP 6
+  - KP MINUS
+  - KP MULTIPLY
+  - KP EQUAL
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -307,11 +307,11 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '1', s: '!'}
-  - {t: '2', s: '@'}
-  - {t: '3', s: '#'}
-  - {t: ., s: '>'}
-  - {t: /, s: '?'}
+  - KP 1
+  - KP 2
+  - KP 3
+  - KP DOT
+  - KP DIVIDE
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: ghost}
   - {type: held}
@@ -321,7 +321,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '0', s: )}
+  - KP 0
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
