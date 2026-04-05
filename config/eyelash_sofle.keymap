@@ -282,11 +282,11 @@
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans       &trans      &trans    &trans  &trans          &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans       &trans      &trans    &trans  &td_mul_div     &kp KP_N7  &kp KP_N8  &kp KP_N9  &trans  &trans
-&trans  &trans  &trans  &kp LPAR     &kp EQUAL   &kp RPAR  &trans  &td_plus_minus  &kp KP_N1  &kp KP_N2  &kp KP_N3  &trans  &trans
-&trans  &trans  &trans  &trans       &trans      &kp PRCNT &trans  &td_dot_comma   &kp KP_N4  &kp KP_N5  &kp KP_N6  &trans  &trans
-&none   &trans  &trans  &trans       &tog 4      &trans    &trans  &trans          &kp KP_N0  &trans     &trans     &trans
+&trans  &trans  &trans  &trans       &trans         &trans    &trans  &trans          &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans       &trans         &trans    &trans  &td_mul_div     &kp KP_N7  &kp KP_N8  &kp KP_N9  &trans  &trans
+&trans  &trans  &trans  &kp LPAR     &kp KP_EQUAL   &kp RPAR  &trans  &td_plus_minus  &kp KP_N1  &kp KP_N2  &kp KP_N3  &trans  &trans
+&trans  &trans  &trans  &trans       &trans         &kp PRCNT &trans  &td_dot_comma   &kp KP_N4  &kp KP_N5  &kp KP_N6  &trans  &trans
+&none   &trans  &trans  &trans       &tog 4         &trans    &trans  &trans          &kp KP_N0  &trans     &trans     &trans
             >;
             display-name = "layer4: Number layer";
             sensor-bindings = <&scroll_encoder>;
